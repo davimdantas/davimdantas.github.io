@@ -1,0 +1,56 @@
+@font-face {
+  font-family: typewriter1;
+  src: url(fonts/Adler.ttf);
+}
+
+@font-face {
+  font-family: typewriter2;
+  src: url(fonts/veterantypewriter.ttf);
+}
+@font-face {
+  font-family: aztech;
+  src: url(fonts/teste/aztech\ Regular.woff);
+}
+@font-face {
+  font-family: aztec;
+  src: url(fonts/AZTEC.TTF);
+}
+@font-face {
+  font-family: aztech1;
+  src: url(fonts/aztech1.ttf);
+}
+@font-face {
+  font-family: mayan;
+  src: url(fonts/MAYAN.TTF);
+}
+@font-face {
+  font-family: mexio;
+  src: url(fonts/MEXIO.TTF);
+}
+@font-face {
+  font-family: native;
+  src: url(fonts/teste/Native\ Alien.woff);
+}
+@font-face {
+  font-family: nativedancer;
+  src: url(fonts/teste/Native\ Dancer.woff);
+}
+@font-face {
+  font-family: native1;
+  src: url(fonts/teste/Native\ Alien\ Extended.woff);
+}
+@font-face {
+  font-family: native2;
+  src: url(fonts/teste/Native\ Alien\ Italic.woff);
+}
+
+/* font-family: 'Cedarville Cursive', cursive;
+font-family: 'Vampiro One', cursive;
+font-family: 'Lora', serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Eater', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Caesar Dressing', cursive;
+font-family: 'Amatic SC', cursive;
+ */

@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Animation Using CSS Transforms &lt; CSS | The Art of Web</title>
+    <meta name="description" content="How to scale, rotate, translate and transform elements using new CSS hover effects that work now in Safari, Webkit and Chrome">
+    <meta name="author" content="Chirp Internet">
+    <link rel="stylesheet" type="text/css" href="/A.style.css+chirp_lightbox.css,Mcc.UDcwiFM66c.css.pagespeed.cf.-mZYftvUGy.css"
+    />
+
+    <link rel="alternate" type="application/rss+xml" title="RSS: New and updated articles" href="/rss.xml">
+    <style type="text/css">
+        #submenu:hover {
+            -webkit-transform: rotate(360deg) scale(2);
+            -moz-transform: rotate(360deg) scale(2);
+            -o-transform: rotate(360deg) scale(2);
+            -ms-transform: rotate(360deg) scale(2);
+            transform: rotate(360deg) scale(2)
+        }
+    </style>
+    <style type="text/css">
+        .showbox {
+            float: left;
+            margin: 4em 1em;
+            width: 100px;
+            height: 60px;
+            border: 2px solid green;
+            background-color: #fff;
+            line-height: 60px;
+            text-align: center
+        }
+    </style>
+    <style type="text/css">
+        .showbox {
+            -webkit-transition: 1s ease-in-out;
+            -moz-transition: 1s ease-in-out;
+            -o-transition: 1s ease-in-out;
+            transition: 1s ease-in-out
+        }
+
+        .showbox.slideright:hover {
+            cursor: pointer;
+            -webkit-transform: translate(3em, 0);
+            -moz-transform: translate(3em, 0);
+            -o-transform: translate(3em, 0);
+            -ms-transform: translate(3em, 0);
+            transform: translate(3em, 0)
+        }
+
+        .showbox.rotate:hover {
+            cursor: pointer;
+            -webkit-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            transform: rotate(30deg)
+        }
+
+        .showbox.slideleft:hover {
+            cursor: pointer;
+            -webkit-transform: translate(-3em, 1em);
+            -moz-transform: translate(-3em, 1em);
+            -o-transform: translate(-3em, 1em);
+            -ms-transform: translate(-3em, 1em);
+            transform: translate(-3em, 1em)
+        }
+
+        .showbox.scale:hover {
+            cursor: pointer;
+            -webkit-transform: scale(2);
+            -moz-transform: scale(2);
+            -o-transform: scale(2);
+            -ms-transform: scale(2);
+            transform: scale(2)
+        }
+    </style>
+    <style type="text/css">
+        .showoff,
+        .showoff2 {
+            margin: 2em 6em;
+            background: green;
+            color: #fff
+        }
+
+        .showoff2,
+        .showoff:hover {
+            -webkit-transform: scale(2);
+            -moz-transform: scale(2);
+            -o-transform: scale(2);
+            -ms-transform: scale(2);
+            transform: scale(2);
+            border-color: red;
+            border-radius: 1em;
+            background: red;
+            color: #000
+        }
+
+        .showoff2:hover {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -o-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            border-color: green;
+            border-radius: 0;
+            background: green;
+            color: #fff
+        }
+    </style>
+    <style type="text/css">
+        #outerspace {
+            position: relative;
+            height: 400px;
+            background: #0c0440 url(/images/outerspace.jpg);
+            background-position: left bottom;
+            -webkit-transition: 3s ease-in;
+            -moz-transition: 3s ease-in;
+            -o-transition: 3s ease-in;
+            transition: 3s ease-in;
+            color: #fff
+        }
+
+        div.rocket {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            -webkit-transition: -webkit-transform 3s ease-in;
+            -moz-transition: -moz-transform 3s ease-in;
+            -o-transition: -o-transform 3s ease-in;
+            transition: transform 3s ease-in
+        }
+
+        div.rocket div {
+            width: 92px;
+            height: 215px;
+            background: url(/images/rocket.gif) no-repeat;
+            -webkit-transition: 2s ease-in-out;
+            -moz-transition: 2s ease-in-out;
+            -o-transition: 2s ease-in-out;
+            transition: 2s ease-in-out
+        }
+
+        #outerspace:hover {
+            background-position: -50% bottom
+        }
+
+        #outerspace:hover div.rocket {
+            -webkit-transform: translate(540px, -200px);
+            -moz-transform: translate(540px, -200px);
+            -o-transform: translate(540px, -200px);
+            -ms-transform: translate(540px, -200px);
+            transform: translate(540px, -200px);
+            border: 1px dashed #666;
+            background-color: rgba(255, 255, 255, .1)
+        }
+
+        #outerspace:hover div.rocket div {
+            -webkit-transform: rotate(70deg);
+            -moz-transform: rotate(70deg);
+            -o-transform: rotate(70deg);
+            -ms-transform: rotate(70deg);
+            transform: rotate(70deg)
+        }
+    </style>
+    <style type="text/css">
+        #stage {
+            position: relative;
+            float: right;
+            margin: 0 0 1em 1em;
+            width: 200px;
+            height: 200px;
+            background: #efefef
+        }
+
+        #block {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: #00f;
+            color: #fff;
+            -webkit-transition-property: left, top, background, -webkit-transform;
+            -webkit-transition-duration: 2s, 2s, 1s, 1s;
+            -webkit-transition-timing-function: ease-out, ease-in, linear, ease-in-out;
+            -webkit-transition-delay: 0, 0, 0, 1s;
+            -moz-transition-property: left, top, background, -moz-transform;
+            -moz-transition-duration: 2s, 2s, 1s, 1s;
+            -moz-transition-timing-function: ease-out, ease-in, linear, ease-in-out;
+            -moz-transition-delay: 0s, 0s, 0s, 1s;
+            -o-transition-property: left, top, background, -o-transform;
+            -o-transition-duration: 2s, 2s, 1s, 1s;
+            -o-transition-timing-function: ease-out, ease-in, linear, ease-in-out;
+            -o-transition-delay: 0, 0, 0, 1s;
+            -ms-transition-property: left, top, background, -ms-transform;
+            transition-property: left, top, background, transform;
+            transition-duration: 2s, 2s, 1s, 1s;
+            transition-timing-function: ease-out, ease-in, linear, ease-in-out;
+            transition-delay: 0s, 0s, 0s, 1s
+        }
+
+        #stage:hover #block {
+            left: 100px;
+            top: 100px;
+            background: red;
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+
+        #timer {
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 8px;
+            background: #666;
+            border-right: solid #ccc;
+            border-right-width: 0;
+            -webkit-transition-property: width, border-right;
+            -webkit-transition-duration: 1s, 1s;
+            -webkit-transition-timing-function: linear, linear;
+            -webkit-transition-delay: 1s, 0;
+            -moz-transition-property: width, border-right;
+            -moz-transition-duration: 1s, 1s;
+            -moz-transition-timing-function: linear, linear;
+            -moz-transition-delay: 1s, 0s;
+            -o-transition-property: width, border-right;
+            -o-transition-duration: 1s, 1s;
+            -o-transition-timing-function: linear, linear;
+            -o-transition-delay: 1s, 0;
+            transition-property: width, border-right;
+            transition-duration: 1s, 1s;
+            transition-timing-function: linear, linear;
+            transition-delay: 1s, 0
+        }
+
+        #stage:hover #timer {
+            width: 100px;
+            border-right-width: 100px;
+            -webkit-transition-delay: 0, 1s;
+            -moz-transition-delay: 0s, 1s;
+            -o-transition-delay: 0, 1s;
+            transition-delay: 0, 1s
+        }
+    </style>
+    <style type="text/css">
+        #stage2 {
+            position: relative;
+            height: 100px;
+            background: #efefef;
+            text-align: right
+        }
+
+        #box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #666;
+            background: red;
+            color: #fff
+        }
+
+        #box2 {
+            position: absolute;
+            left: 120px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #666;
+            background: #00f;
+            -webkit-transition: 1s all ease-in-out;
+            -moz-transition: 1s all ease-in-out;
+            -o-transition: 1s all ease-in-out;
+            transition: 1s all ease-in-out;
+            color: #fff
+        }
+
+        #box1:hover+#box2 {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+            left: 627px;
+            background: #ff0;
+            color: #000
+        }
+    </style>
+    <style type="text/css">
+        #stage3 {
+            position: relative;
+            height: 100px;
+            background: #efefef;
+            text-align: right
+        }
+
+        #box3 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #666;
+            background: red;
+            color: #fff;
+            -webkit-transition: 1s all ease-in-out;
+            -moz-transition: 1s all ease-in-out;
+            -o-transition: 1s all ease-in-out;
+            transition: 1s all ease-in-out
+        }
+
+        #box3:hover {
+            width: 600px
+        }
+
+        #box4 {
+            position: absolute;
+            left: 120px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #666;
+            background: #00f;
+            color: #fff;
+            -webkit-transition: 1s all ease-in-out;
+            -moz-transition: 1s all ease-in-out;
+            -o-transition: 1s all ease-in-out;
+            transition: 1s all ease-in-out
+        }
+
+        #box4:hover {
+            width: 500px
+        }
+
+        #box3:hover+#box4 {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+            left: 627px;
+            background: #ff0;
+            border-radius: 50px;
+            color: #000
+        }
+    </style>
+    <style type="text/css">
+        #stage4 {
+            position: relative;
+            height: 4em;
+            background: #efefef;
+            text-align: center
+        }
+
+        #box5 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100px;
+            background: red;
+            line-height: 2em;
+            color: #fff;
+            -webkit-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
+            -moz-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
+            -o-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
+            transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1)
+        }
+
+        #stage4:hover #box5 {
+            left: calc(100% - 100px);
+            bottom: 2em
+        }
+    </style>
+    <style type="text/css">
+        #stage5 {
+            position: relative;
+            height: 4em;
+            background: #efefef;
+            text-align: center
+        }
+
+        #box6 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100px;
+            background: red;
+            line-height: 2em;
+            color: #fff;
+            -webkit-transition: 1s 4s bottom, 4s left cubic-bezier(1, 0, 1, 1);
+            -moz-transition: 1s 4s bottom, 4s left cubic-bezier(1, 0, 1, 1);
+            -o-transition: 1s 4s bottom, 4s left cubic-bezier(1, 0, 1, 1);
+            transition: 1s 4s bottom, 4s left cubic-bezier(1, 0, 1, 1)
+        }
+
+        #stage5:hover #box6 {
+            left: calc(100% - 100px);
+            bottom: 2em;
+            -webkit-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
+            -moz-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
+            -o-transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1);
+            transition: 1s bottom, 4s 1s left cubic-bezier(0, 1, 1, 1)
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--htdig_noindex-->
+    <a class="chirplink" accesskey="S" href="#content">skip to content</a>
+    <!--/htdig_noindex-->
+
+    <header id="header">
+        <a href="/">
+            <img src="/images/banner-taow.png" width="737" height="87" alt="The Art of Web">
+        </a>
+        <!--htdig_noindex-->
+        <nav id="menu" itemscope itemtype="http://schema.org/WebSite">
+            <meta itemprop="url" content="https://www.the-art-of-web.com/">
+            <form id="searchbox" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" method="POST" action="/searchresult.html"
+                accept-charset="UTF-8" onsubmit="return (words.value != '');">
+                <meta itemprop="target" content="https://www.the-art-of-web.com/searchresult.html?words={words}">
+                <input id="sitesearch" itemprop="query-input" type="search" results="10" autosave="searches" name="words" placeholder="Search">
+                <ul id="suggest">
+                    <li></li>
+                </ul>
+            </form>
+            <ul>
+                <li>
+                    <a accesskey="1" href="/">Home</a>
+                </li>
+                <li>
+                    <a accesskey="2" href="/html/">HTML</a>
+                </li>
+                <li>
+                    <a accesskey="3" href="/css/">CSS</a>
+                </li>
+                <li>
+                    <a accesskey="4" href="/javascript/">JavaScript</a>
+                </li>
+                <li>
+                    <a accesskey="5" href="/php/">PHP</a>
+                </li>
+                <li>
+                    <a accesskey="6" href="/sql/">SQL</a>
+                </li>
+                <li>
+                    <a accesskey="7" href="/system/">System</a>
+                </li>
+                <li>
+                    <a accesskey="8" href="/links/">Links</a>
+                </li>
+            </ul>
+        </nav>
+        <!--/htdig_noindex-->
+    </header>
+
+    <aside id="rhs">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- The Art of Web - RWD Top -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9789897350102210" data-ad-slot="8956648230" data-ad-format="auto"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+    <section id="content">
+        <!--htdig_noindex-->
+        <aside id="ad_content" class="noprint">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- The Art of Web - RWD Content -->
+            <ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-9789897350102210" data-ad-slot="1433381437" data-ad-format="auto"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </aside>
+
+        <nav id="submenu">building menu...</nav>
+        <!--/htdig_noindex-->
+
+        <h1>
+            <span class="nomobile">CSS: </span>Animation Using CSS Transforms</h1>
+
+        <p class="social_counters">
+            <a class="tweets" title="Share on Twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Animation+Using+CSS+Transforms:&amp;url=https%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F&amp;via=theartofweb">
+                <span>&nbsp;
+                    <span>Tweet</span>
+                </span>
+            </a>
+            <a class="likes" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F">
+                <span>0
+                    <span> Shares</span>
+                </span>
+            </a>
+            <a class="gplus" title="Recommend on Google+" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F">
+                <span>&nbsp;
+                    <span>Share</span>
+                </span>
+            </a>
+            <a class="reddit" title="Post to Reddit" target="_blank" href="http://www.reddit.com/submit?title=Animation+Using+CSS+Transforms&amp;url=https%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F">
+                <span>0
+                    <span> Tweets</span>
+                </span>
+            </a>
+            <a class="feedback" title="User Commentc" href="#user_comments">
+                <span>37
+                    <span> Comments</span>
+                </span>
+            </a>
+        </p>
+
+
+
+
+        <p>The examples on this page will work now in Firefox, Safari, Chrome, Opera and Internet Explorer 10. In older browsers
+            you will see either no effects, or the transforms taking place without any animation.</p>
+
+        <p>The animations presented below involve setting up a
+            <a href="#transforms">transformation</a> to take place in response to a mouseover or other event. Then, rather than applying the effect
+            instantly, we assign a
+            <a href="/css/timing-function/">transition timing function
+            </a> which causes the transformation to take place incrementally over a set time period.</p>
+
+        <p>There are also other kinds of animation available, including
+            <a href="/css/3d-transforms/">@keyframes</a> for perpetual motion, and
+            <a href="/javascript/animate-curved-path/">requestAnimationFrame</a> which gives complete control over the timing and path. These are covered in separate
+            articles.</p>
+
+        <p>
+            <b>Firefox and Opera now support these transforms with an almost identical syntax - just replace
+                <tt>-webkit-</tt> with
+                <tt>-moz-</tt> or
+                <tt>-o-</tt> in the examples below.</p>
+
+        <p>Internet Explorer 10 supports transitions with no prefix. In IE10 Preview the
+            <tt>-ms-</tt> prefix was required for transitions. Transforms in all versions of IE10 still require the prefix.</b>
+        </p>
+
+        <p>To support all modern browsers, the following styles should be used for transitions:</p>
+
+        <ul>
+            <li>-webkit-transition</li>
+            <li>-moz-transition</li>
+            <li>transition</li>
+        </ul>
+
+        <p>and for transforms:</p>
+
+        <ul>
+            <li>-webkit-transform</li>
+            <li>-moz-transform</li>
+            <li>-ms-transform</li>
+            <li>transform</li>
+        </ul>
+
+        <p>We've omitted the
+            <tt>-o-</tt> prefix because Opera now recognises the WebKit styles.</p>
+
+
+        <h2 id="transforms">Introducing CSS Transformations</h2>
+
+        <p>The effect of a CSS Transform is to modify the appearance of an element in the browser by translation, rotation or
+            other means. When defined in a style sheet, transformations are applied as the page is rendered, so you don't
+            actually see any animations taking place. Transforms can also be applied as a
+            <tt>mouseover</tt> or similar effect which you can see in the next section.</p>
+
+        <p>
+            <a href="http://www.nabble.com/Apple's-Proposal-for-CSS-Transformations-t4760870.html" target="_blank">Apple's proposal for CSS Transformations</a> calls for the ability to change the perspective and work in three
+            dimensions, but that's some way away yet. Even the features demonstrated here won't appear in other browsers
+            until they're approved by the standards body who are still
+            <a href="http://www.css3.info/modules/" target="_blank">quibbling over CSS3 modules</a>.</p>
+
+        <p>Below we've placed four identical DIV's styled as a 100 x 60 pixel box with a 2 pixel border. Subsequently, each
+            element has been transformed in some way using the
+            <tt>transform</tt> property:</p>
+
+        <table class="collapse" style="margin: 1em auto; width: 100%;" cellpadding="5">
+            <tr>
+                <td>
+                    <b style="color: green;">box&nbsp;1</b>
+                </td>
+                <td>Translated to the right:
+                    <tt>transform: translate(3em,0);</tt>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b style="color: red;">box 2</b>
+                </td>
+                <td>Rotated 30 degrees with the clock:
+                    <tt>transform: rotate(30deg);</tt>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b style="color: green;">box 3</b>
+                </td>
+                <td>Translated to the left and down:
+                    <tt>transform: translate(-3em,1em);</tt>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b style="color: green;">box 4</b>
+                </td>
+                <td>Scaled to twice its original size:
+                    <tt>transform: scale(2);</tt>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <div class="showbox" style="
+  -webkit-transform: translate(3em,0);
+  -moz-transform: translate(3em,0);
+  -o-transform: translate(3em,0);
+  -ms-transform: translate(3em,0);
+  transform: translate(3em,0);
+">box 1</div>
+        <div class="showbox" style="
+  border-color: red;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+">box 2</div>
+        <div class="showbox" style="
+  -webkit-transform: translate(-3em,1em);
+  -moz-transform: translate(-3em,1em);
+  -o-transform: translate(-3em,1em);
+  -ms-transform: translate(-3em,1em);
+  transform: translate(-3em,1em);
+">box 3</div>
+        <div class="showbox" style="
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+">box 4</div>
+        <div style="clear: left;">
+            <!-- -->
+        </div>
+
+        <p>The HTML and CSS code for this example is as follows:</p>
+
+        <code class="final">&lt;style type=&quot;text/css&quot;&gt;
+
+  .showbox {
+    float: left;
+    margin: 4em 1em;
+    width: 100px;
+    height: 60px;
+    border: 2px solid green;
+    background-color: #fff;
+    line-height: 60px;
+    text-align: center;
+  }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;showbox&quot; style=&quot;<span>transform: translate(3em,0);</span>&quot;&gt;box 1&lt;/div&gt;
+&lt;div class=&quot;showbox&quot; style=&quot;<span>transform: rotate(30deg);</span> border-color: <font style="color: red;">red</font>;&quot;&gt;box 2&lt;/div&gt;
+&lt;div class=&quot;showbox&quot; style=&quot;<span>transform: translate(-3em,1em);</span>&quot;&gt;box 3&lt;/div&gt;
+&lt;div class=&quot;showbox&quot; style=&quot;<span>transform: scale(2);</span>&quot;&gt;box 4&lt;/div&gt;
+&lt;div style=&quot;clear: left;&quot;&gt;&lt;/div&gt;</code>
+
+        <p>Without the translations, and the red border on the second box, you would see just four identical boxes labelled
+            one through four. What you see in supported browsers (Safari, Chrome, Firefox, Opera), however, will be more
+            like this:</p>
+
+        <p style="text-align: center;">
+            <img style="border: 2px solid #666; padding: 1em 4em;" src="/images/css-transform.gif" width="504" height="128" alt="">
+        </p>
+
+        <p>Of note is the fact that the text is still selectable in transformed elements, even when rotated, and that scaling
+            an element affects properties including border widths and font sizes and not just the box dimensions.
+        </p>
+
+
+        <h2 id="animation">Animating your Transforms</h2>
+
+        <p>While CSS Transformation in itself is a powerful tool for developers (though I shudder to think what will happen
+            as it becomes more widely used), the ability to
+            <tt>animate</tt> the same effects using
+            <tt>-webkit-transition</tt> is far more exciting. Move your mouse over the following four boxes for a demonstration:</p>
+
+
+
+        <div class="showbox slideright">box 1</div>
+        <div class="showbox rotate" style="border-color: red;">box 2</div>
+        <div class="showbox slideleft">box 3</div>
+        <div class="showbox scale">box 4</div>
+        <div style="clear: left;">
+            <!-- -->
+        </div>
+
+        <p>What you see above is the four boxes from the previous section, in their default states. When you mouseover any of
+            the boxes, however, the CSS transformation is applied as a one second animation. When the mouse moves away the
+            animation is reversed, taking each box back to its original state.</p>
+
+        <p>And we can do this without using JavaScript - only HTML and CSS! Here is the complete code for 'box 1' which slides
+            to the right and back:
+        </p>
+
+        <code>&lt;style type=&quot;text/css&quot;&gt;
+
+  .showbox {
+    float: left;
+    margin: 4em 1em;
+    width: 100px;
+    height: 60px;
+    border: 2px solid green;
+    background-color: #fff;
+    line-height: 60px;
+    text-align: center;
+<i>    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;</i>
+    transition: 1s ease-in-out;
+  }
+  .showbox.slideright<span>:hover</span> {
+<i>    -webkit-transform: translate(3em,0);
+    -moz-transform: translate(3em,0);
+    -o-transform: translate(3em,0);
+    -ms-transform: translate(3em,0);</i>
+    transform: translate(3em,0);
+  }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;showbox slideright&quot;&gt;box 1&lt;/div&gt;</code>
+
+        <p>If you think that's cool, realise that CSS Animation can be applied not just to the transforms, but also to other
+            CSS properties including: opacity, colour and a bunch of others.</p>
+
+
+
+        <p>In the next example the box on the left begins as small and green with square corners, while the one on the right
+            is larger, with a red border and rounded corners. Hovering over either of the boxes will trigger an animation
+            that makes box 1 take on the appearance of box 2 and vice versa.</p>
+
+        <div class="showbox showoff">box 1</div>
+        <div class="showbox showoff2">box 2</div>
+        <div style="clear: left;">
+            <!-- -->
+        </div>
+
+        <p>Again, we're still only using HTML and CSS to make this happen. Without CSS Transforms the two boxes will still change
+            their
+            <tt>border-color</tt>, and possibly also the
+            <a href="/css/border-radius/">border-radius</a>, but it happens immediately rather than as a one second animation.</p>
+
+        <p>For more advanced examples you can read our new article on
+            <a href="/javascript/css-animation/">using JavaScript to trigger the animation
+            </a>. And for an alternative to CSS transitions, and finer control over the animation paths and timing, you can
+            use
+            <a href="/javascript/animate-curved-path/">Window.requestAnimationFrame</a>.</p>
+
+
+        <h2>Multiple Transforms on one element</h2>
+
+        <p>To apply more than one transformation to a single element simply list them one after another separated by spaces.
+            The submenu for example at the top right of this page has the following styles:</p>
+
+        <code class="final">&lt;style type=&quot;text/css&quot;&gt;
+
+  #submenu {
+    background-color: #eee;
+<i>    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;</i>
+    transition: 1s ease-in-out;
+  }
+  #submenu:hover {
+    background-color: #fc3;
+<i>    -webkit-transform: rotate(360deg) scale(2);
+    -moz-transform: rotate(360deg) scale(2);
+    -o-transform: rotate(360deg) scale(2);
+    -ms-transform: rotate(360deg) scale(2);</i>
+    transform: rotate(360deg) scale(2);
+  }
+
+&lt;/style&gt;</code>
+
+        <p>
+            <b>Note that IE10 now uses no prefix for transitions, but
+                <tt>-ms-</tt> is still required for transforms.</b>
+        </p>
+
+        <p>This means that when you hover over the submenu, it will change colour, rotate and double in size over a period of
+            one second as shown here:
+        </p>
+
+        <table border="0" width="100%" cellpadding="3" cellspacing="0">
+            <tr style="text-align: center;">
+                <td>
+                    <img src="/images/submenu.jpg" width="300" height="150" border="1" alt="">
+                </td>
+                <td>&lt;=&gt;</td>
+                <td>
+                    <img src="/images/submenu_hover.jpg" width="300" height="150" border="1" alt="">
+                </td>
+            </tr>
+        </table>
+
+        <p>These effects are now available in the latest public release of Safari, so in principle all OSX users will be able
+            to see these effects. Whether it's a good idea to add them to your website I'll leave up to you.
+        </p>
+
+        <p>Thanks to
+            <a href="http://maisonbisson.com/blog/post/12472/css-transformations-in-safari-webkit/" target="_blank">misterbisson</a> those without WebKit can now see a screencast of the menu animation:</p>
+
+        <p style="text-align: center;">
+            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="300" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+                <param name="flashvars" value="intl_lang=en-us&amp;photo_secret=9d73dbf9b9&amp;photo_id=2840083312&amp;show_info_box=true">
+                <param name="bgcolor" value="#000000">
+                <param name="allowFullScreen" value="true">
+                <param name="src" value="http://www.flickr.com/apps/video/stewart.swf?v=59809">
+                <embed type="application/x-shockwave-flash" width="400" height="300" src="http://www.flickr.com/apps/video/stewart.swf?v=59809"
+                    allowfullscreen="true" bgcolor="#000000" flashvars="intl_lang=en-us&amp;photo_secret=9d73dbf9b9&amp;photo_id=2840083312&amp;show_info_box=true"></embed>
+            </object>
+        </p>
+
+
+        <h2>Animations in action</h2>
+
+        <p>Now here's another example of the kind of fun we can have in combining different effects into single animation. Perhaps
+            you can already work out what's going to happen based on the CSS?</p>
+
+        <code>&lt;style type=&quot;text/css&quot;&gt;
+
+  <i>/* initial state */</i>
+  #outerspace {
+    position: relative;
+    height: 400px;
+    background: #0c0440 url(<a href="/images/outerspace.jpg">/images/outerspace.jpg</a>);
+    color: #fff;
+  }
+  div.rocket {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+<i>    -webkit-transition: 3s ease-in;
+    -moz-transition: 3s ease-in;
+    -o-transition: 3s ease-in;</i>
+    transition: 3s ease-in;
+  }
+  div.rocket div {
+    width: 92px;
+    height: 215px;
+    background: url(<a href="/images/rocket.gif">/images/rocket.gif</a>) no-repeat;
+<i>    -webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;</i>
+    transition: 2s ease-in-out;
+  }
+
+  <i>/* hover final state */</i>
+  #outerspace:hover div.rocket {
+<i>    -webkit-transform: translate(540px,-200px);
+    -moz-transform: translate(540px,-200px);
+    -o-transform: translate(540px,-200px);
+    -ms-transform: translate(540px,-200px);</i>
+    transform: translate(540px,-200px);
+  }
+  #outerspace:hover div.rocket div {
+<i>    -webkit-transform: rotate(70deg);
+    -moz-transform: rotate(70deg);
+    -o-transform: rotate(70deg);
+    -ms-transform: rotate(70deg);</i>
+    transform: rotate(70deg);
+  }
+
+&lt;/style&gt;</code>
+
+        <p>and the HTML:</p>
+
+        <code>&lt;div id=&quot;outerspace&quot;&gt;
+&lt;div class=&quot;rocket&quot;&gt;
+&lt;div&gt;&lt;!-- rocket --&gt;&lt;/div&gt;
+<i>.rocket</i>
+&lt;/div&gt;<i>#outerspace</i>
+&lt;/div&gt;</code>
+
+        <p>Put them together and this is the what you get:</p>
+
+
+
+        <div id="outerspace">
+            <div class="rocket">
+                <div>
+                    <!-- rocket -->
+                </div>
+                .rocket
+            </div>#outerspace
+        </div>
+
+        <p>If you're using Safari 3 you may notice some problems with the animation, particularly when it reverses after you
+            move the mouse away, but in the latest version of WebKit it's already much smoother. Also the animation in Opera
+            is a bit erratic, with not all the elements being animated.
+        </p>
+
+        <p>The dotted outline that appears during the animation shows the placement of the DIV containing the rocket image.
+            This DIV translates across the screen while the image inside is rotated. Simple!</p>
+
+        <p>For the browser-impaired what's happening is that when you move the mouse over the space background, the rocket translates
+            from the bottom left to the top right over a period of 3 seconds (
+            <tt>translate()</tt>) and also rotates 70 degrees in a clockwise direction over the first 2 seconds (
+            <tt>rotate()</tt>). The effect is rudimentary, but shows the potentional.
+        </p>
+
+        <p>To have more control over the animation paths and timing, you can set up
+            <a href="/css/3d-transforms/">WebKit Keyframes</a>. They also allow the animations to run automatically, and continuously, rather than just
+            in response to mouse events.</p>
+
+
+        <h2>Multiple timing functions</h2>
+
+
+
+        <div id="stage">#stage
+            <div id="timer">
+                <!-- -->
+            </div>
+            <div id="block">#block</div>
+        </div>
+
+        <p>In this example we are applying four different transitions using four different timing functions.</p>
+
+        <p>When you
+            <tt>:hover</tt> over the area to the right the blue box will spin, change color from red to blue and move from the
+            top left of the containing box to the bottom right over two seconds.</p>
+
+        <p>The first thing you will notice is that that the movement of the box appears to be curved rather than straight. That's
+            because we've used the
+            <tt>ease-out</tt>
+            <a href="/css/timing-function/">timing function
+            </a> for the horizontal translation and
+            <tt>ease-in</tt> for the vertical.</p>
+
+        <p>
+            <b>To animate over an
+                <a href="/javascript/animate-curved-path/">actual curved path</a>, or even an arbitrary path, you will need to use JavaScript to control the animation.
+            </b>
+        </p>
+
+        <p>During the animation, the colour change from blue to red takes place over the first second of the two second transition,
+            followed by the rotation which takes place over the second second.</p>
+
+        <p style="text-align: center;">
+            <img src="/images/blockanimation1.png" width="175" height="168" alt="">
+            <img src="/images/blockanimation2.png" width="175" height="168" alt="">
+            <img src="/images/blockanimation3.png" width="175" height="168" alt="">
+            <img src="/images/blockanimation4.png" width="175" height="168" alt="">
+        </p>
+
+        <p>The trick to this is that instead of defining the
+            <tt>-webkit-transition</tt> as a single property, you can break it up into component parts. We've also made use of
+            <tt>-webkit-transition-delay</tt> which allows you to set the starting point of different effects.</p>
+
+        <p>Here are the relevant CSS statements:</p>
+
+        <code>&lt;style type=&quot;text/css&quot;&gt;
+
+  #block {
+    ...
+    left: 0;
+    top: 0;
+    ...
+    <span>background: blue;</span>
+    ...
+    -webkit-transition-property: left, top, <span>background</span>, -webkit-transform;
+    -webkit-transition-duration: 2s, 2s, <span>1s</span>, 1s;
+    -webkit-transition-timing-function: ease-out, ease-in, <span>linear</span>, ease-in-out;
+    -webkit-transition-delay: 0, 0, <span>0</span>, 1s;
+    ...
+  }
+  #stage:hover #block {
+    left: 100px;
+    top: 100px;
+    <span>background: red;</span>
+    -webkit-transform: rotate(360deg);
+   ...
+  }
+
+&lt;/style&gt;</code>
+
+        <p>The rules affecting the background colour transition have been highlighted. They take place over the first second
+            (0s delay, 1s duration). The rotation transform takes place in the next second (1s delay, 1s duration).</p>
+
+        <p>
+            <b>For other browsers the
+                <tt>-webkit-</tt> prefixed styles need to be repeated and the prefix replaced with
+                <tt>-moz-</tt>,
+                <tt>-o-</tt>
+                and
+                <tt>-ms-</tt>. With the exception that
+                <tt>*transition*</tt>
+                requires no prefix for Internet Explorer 10 and higher.</b>
+        </p>
+
+        <p>
+            <b>Firefox requires units to be specified even for zero values in
+                <tt>-moz-transition-delay</tt>, so
+                <tt>0s, 0s, 0s, 1s</tt> will work for the example above.</b>
+        </p>
+
+
+        <h2 id="adjacent">Hover over one element to affect another</h2>
+
+        <p>A couple of people have asked about triggering animations in relation to a click or hover event elsewhere on the
+            page. With JavaScript this can be done by using an event handler to set or change the
+            <tt>className</tt> of the element to be animated, and to have a transformation or
+            <tt>keyframes</tt> associated with the new class.</p>
+
+        <p>Using CSS there are some options for targeting related elements. These involve selectors such as the
+            <tt>&gt;</tt> (child),
+            <tt>+</tt>
+            (adjacent sibling) and
+            <tt>~</tt> (general sibling)
+            <a href="http://www.w3.org/TR/selectors/#combinators" target="_blank">combinators</a>.</p>
+
+        <p>The preceding examples all required a direct
+            <tt>hover</tt> event either on the element itself or on its container, wheras in this example the blue box is animated
+            only when you hover over its sibing, the red box:
+        </p>
+
+
+
+        <div id="stage2">
+            <div id="box1">#box1</div>
+            <div id="box2">#box2</div>
+            #stage2
+        </div>
+
+        <p>The relevant CSS code is as follows. Note that we are using the
+            <tt>+</tt> adjacent sibling combinator to target
+            <tt>#box2</tt> when
+            <tt>#box1</tt> experiences a hover event. The
+            <tt>~</tt> combinator may be more flexible in letting you target elements that are further away from the triggering
+            element (some
+            <a href="/css/nth-child-selector/">examples</a>).</p>
+
+        <code>&lt;style type=&quot;text/css&quot;&gt;
+
+  #box2 {
+    position: absolute;
+    left: 120px;
+    ...
+    background: blue;
+    ...
+<i>    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;</i>
+    transition: 1s ease-in-out;
+  }
+  #box1:hover <span>+</span> #box2 {
+<i>    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);</i>
+    transform: rotate(360deg);
+    left: calc(100% - 102px);
+    background: yellow;
+  }
+
+&lt;/style&gt;</code>
+
+        <p>
+            <b>Internet Explorer 11 fails trying to animate when the values have been assigned using
+                <tt>calc()</tt>. You will need to use a fixed value instead.
+            </b>
+        </p>
+
+        <p>Of course we can still animate the first box at the same time as targeting it's sibling or siblings:</p>
+
+
+
+        <div id="stage3">
+            <div id="box3">#box3</div>
+            <div id="box4">#box4</div>
+            #stage3
+        </div>
+
+        <p>Just be sure not to move the hovered element out from under the pointer or the animation will stop/reverse.</p>
+
+        <p>These examples work more or less as intended in WebKit (Safari, Chrome), Firefox and Opera browsers. They also work
+            in Internet Explorer 10.</p>
+
+
+        <h2>Controlling the reverse animation</h2>
+
+        <p>In all the examples above you may have noticed some strange effects when the animation is reversed - particularly
+            when the mouse moves away from the trigger area before the animation has completed.</p>
+
+        <p>The box in the animation below will rise up slowly and then shoot off to the right useing an extreme
+            <a href="/css/timing-function/">cubic-bezier timing function</a>, making it start off quickly and then slow down at the end.</p>
+
+        <p>When you move your mouse away it will not track back over the same path, as the vertical animation will come first,
+            and the box will move quickly from right to left before slowing down.</p>
+
+
+
+        <div id="stage4">
+            <div id="box5">#box</div>
+        </div>
+
+        <p>The CSS for this is as follows:</p>
+
+        <code>&lt;style type=&quot;text/css&quot;&gt;
+
+  #stage {
+    position: relative;
+    height: 4em;
+    background: #efefef;
+    text-align: center;
+  }
+  #box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background: red;
+    line-height: 2em;
+    color: #fff;
+<i>    -webkit-transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);
+    -moz-transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);
+    -o-transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);</i>
+<span>    transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);</span>
+  }
+  #stage:hover #box {
+    left: calc(100% - 100px);
+    bottom: 2em;
+  }
+
+&lt;/style&gt;</code>
+
+        <p>We can, however, control the animation in both directions. In this case causing the animation to perform everything
+            in reverse:</p>
+
+
+
+        <div id="stage5">
+            <div id="box6">#box</div>
+        </div>
+
+        <p>The trick is to move to original transition settings to the
+            <tt>:hover</tt> statement and for the 'non-hover' to use a transition that reverses them:</p>
+
+        <code class="final">&lt;style type=&quot;text/css&quot;&gt;
+
+  #stage {
+    position: relative;
+    height: 4em;
+    background: #efefef;
+    text-align: center;
+  }
+  #box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background: red;
+    line-height: 2em;
+    color: #fff;
+<i>    -webkit-transition: 1s 4s bottom, 4s left cubic-bezier(1,0,1,1);
+    -moz-transition: 1s 4s bottom, 4s left cubic-bezier(1,0,1,1);
+    -o-transition: 1s 4s bottom, 4s left cubic-bezier(1,0,1,1);</i>
+<span>    transition: 1s 4s bottom, 4s left cubic-bezier(1,0,1,1);</span>
+  }
+  #stage:hover #box {
+    left: calc(100% - 100px);
+    bottom: 2em;
+<i>    -webkit-transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);
+    -moz-transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);
+    -o-transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);</i>
+    transition: 1s bottom, 4s 1s left cubic-bezier(0,1,1,1);
+  }
+
+&lt;/style&gt;</code>
+
+        <p>This can be useful for button and menu effects to make an element on the page appear quickly and then fade out slowly,
+            or vice versa.</p>
+
+        <p>Remember that the transitions set in the
+            <tt>:hover</tt> statement are the ones that will be used as the hover state is applied. The 'default' transition
+            settings will be used when returning to the default state.
+        </p>
+
+
+        <h2>References</h2>
+
+        <ul>
+            <li>
+                <a href="http://webkit.org/blog/130/css-transforms/" target="_blank">Surfin' Safari - CSS Transforms</a>
+            </li>
+            <li>
+                <a href="http://webkit.org/blog/138/css-animation/" target="_blank">Surfin' Safari - CSS Animation</a>
+            </li>
+        </ul>
+
+        <h2>Translations</h2>
+
+        <ul>
+            <li>
+                <a href="http://czlib.bizow.com/post/animace-pomoci-css-transformuje" target="_blank">Czech</a> by Alex Novak from
+                <a rel="nofollow" href="http://bizow.com/" target="_blank">bizow.com</a>
+            </li>
+        </ul>
+
+        <h2 id="related">Related Articles - Transforms and Transitions</h2>
+
+        <ul>
+            <li>
+                <b>Animation Using CSS Transforms</b>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/3d-transforms/">3D Transforms and Animations</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/timing-function/">Transition Timing Functions</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/bouncing-ball-animation/">Bouncing Ball Animation</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/infinite-photo-carousel/">Infinite Animated Photo Wheel</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/3d-chart/">An actual 3D bar chart</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/photo-rotator/">Photo Rotator with 3D Effects</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/css/fading-slideshow-no-jquery/">Fading slideshow with a touch of JavaScript</a>
+                <small style="font-size: 9px; color: #ccc;">[CSS]</small>
+            </li>
+            <li>
+                <a href="/javascript/css-animation/">Controlling CSS Animations</a>
+                <small style="font-size: 9px; color: #ccc;">[JAVASCRIPT]</small>
+            </li>
+            <li>
+                <a href="/javascript/css-fireworks/">CSS Animated Fireworks</a>
+                <small style="font-size: 9px; color: #ccc;">[JAVASCRIPT]</small>
+            </li>
+            <li>
+                <a href="/javascript/animate-curved-path/">Animating objects over a curved path</a>
+                <small style="font-size: 9px; color: #ccc;">[JAVASCRIPT]</small>
+            </li>
+        </ul>
+
+
+        <p class="noprint">
+            <a href="/css/">&lt; CSS</a>
+        </p>
+
+        <div class="clear"></div>
+
+        <ul id="share" ontouchstart="this.className = 'hover';">
+            <li class="fbook">
+                <a title="Share on Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F">
+                    <!-- -->
+                </a>
+            </li>
+            <li class="tweet">
+                <a title="Tweet This" target="_blank" href="https://twitter.com/intent/tweet?text=CSS%3A+Animation+Using+CSS+Transforms&amp;url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F&amp;via=theartofweb"></a>
+            </li>
+            <li class="gplus">
+                <a title="Plus on Google+" target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2Fcss-animation%2F"></a>
+            </li>
+        </ul>
+        <!-- start feedback form -->
+        <div id="feedback">
+            <h4>Send a message to The Art of Web:</h4>
+
+            <form id="feedback_form" method="POST" action="/feedback.html" accept-charset="UTF-8">
+                <input type="hidden" name="chirp\securetoken" value="00dca501fc69bbb6cf572c0709f63375">
+                <input type="hidden" name="crypted" value="014bbd9c607fc0bf4e9faad2023dd761iiDFGd0=">
+                <input type="hidden" name="timestamp" value="Sun, 24 Jun 2018 01:02:40 +1000">
+                <p>
+                    <label>Your Name
+                        <strong>*</strong>
+                        <br>
+                        <input id="field_name" required type="text" size="48" name="name" value="">
+                    </label>
+                </p>
+                <p>
+                    <label>Email Address
+                        <strong>*</strong>
+                        <br>
+                        <input id="field_email" type="email" required size="48" name="email" value="">
+                    </label>
+                    <br>
+                    <small>used only for us to reply, and to display your
+                        <a tabindex="-1" href="https://en.gravatar.com/" target="_blank">gravatar</a>.</small>
+                </p>
+                <p>
+                    <label>Website
+                        <br>
+                        <input type="url" pattern="^https?://.+" size="48" name="website" value="" placeholder="http://">
+                    </label>
+                </p>
+                <p>
+                    <label>Message
+                        <strong>*</strong>
+                        <br>
+                        <textarea id="field_message" name="message" required cols="48" rows="8"></textarea>
+                    </label>
+                </p>
+                <p>
+                    <img class="captcha" style="background:url(data:image/png;base64,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) bottom"
+                        src="data:image/png;base64,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">
+                </p>
+                <p>
+                    <label>
+                        <a tabindex="-1" href="/php/captcha/">CAPTCHA</a>
+                        <strong>*</strong>:
+                        <input id="captcha_code" type="text" required pattern="\d{5}" name="captcha" size="8"
+                            maxlength="5">
+                    </label>
+                    <small>&lt;- copy the digits from the image into this box</small>
+                </p>
+                <p>
+                    <input type="submit" name="submit" value="Send Feedback">
+                </p>
+            </form>
+
+            <p class="instruction">press &lt;Esc&gt; or click outside this box to close</p>
+
+        </div>
+        <!-- #feedback -->
+        <h2 id="user_comments">User Comments</h2>
+
+        <p id="feedback_count" style="font-size: 0.9em; color: #666;">Most recent 20 of 37 comments:</p>
+
+        <a class="post_comment show_feedback">Post your comment or question</a>
+
+        <div id="comments">
+            <div class="comment" hash="e28a52d0eb6022d34313f1a71d1878ca" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">Visitor</big>
+                    <span class="comment_time" itemprop="dateCreated">16 October, 2015</span>
+                </p>
+                <div itemprop="text">
+                    <p>Thank you so much for this! It's been a great help for us visitors who want to learn Animation using
+                        CSS. Btw, can you add more examples? Like a light bulb turning it on and off.</p>
+                </div>
+            </div>
+            <div class="comment" hash="7a560d58527ffe436b036e0fa6d9cc5f" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">Kaboom</big>
+                    <span class="comment_time" itemprop="dateCreated">3 December, 2014</span>
+                </p>
+                <div itemprop="text">
+                    <p>You said that there's some extra code for moving outerspace behind the rocket. Where is that extra code?:)
+                        i just wonder... i tried to find it in your linked css, but you have it probably hidden somewhere?
+                        how can you hide some css from user? it would be quite helpful to know
+                        <img src="/smilies/icon_smile.gif"
+                            width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+                <div class="response">
+                    <p>No, you can't hide CSS from the user because the browser has to be able to read it and that makes it
+                        accessible through the built in 'Web Inspector'. In this case it's the Google PageSpeed module that
+                        has minified and moved the CSS in the HTML code.
+                        <img src="/smilies/icon_cool.gif" width="15" height="15"
+                            border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="e91ea2e436f496b6ace04528f5f13d38" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://wort-und-form.de/" target="_blank" rel="nofollow">
+                        <big itemprop="author">Texter und Webdesigner</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">22 May, 2014</span>
+                </p>
+                <div itemprop="text">
+                    <p>Thanks for that comprhensive explanation! A lot of work done very well!
+                        <br> I just don't get how the moving background of the rocket is done... am I just overreading the important
+                        line? I just see the code for the moving div and the rotating conent?</p>
+                </div>
+                <div class="response">
+                    <p>There's some extra code for the moving background:</p>
+
+                    <p>
+                        <code>  #outerspace {<br>
+    background: #0c0440 url(/images/outerspace.jpg);<br>
+    background-position: left bottom;<br>
+  }<br>
+  #outerspace:hover {<br>
+    background-position: -50% bottom;<br>
+  }</code>
+                    </p>
+
+                    <p>
+                        <img src="/smilies/icon_cool.gif" width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="dbd1d739bcdacf941de6e1be65bb83bf" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="https://github.com/caseyleask" target="_blank" rel="nofollow">
+                        <big itemprop="author">Casey Leask</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">14 August, 2013</span>
+                </p>
+                <div itemprop="text">
+                    <p>-ms-transition never saw the light of day. See
+                        <a href="https://github.com/chriseppstein/compass/commit/2973503013a67b958b579f17"
+                            target="_blank">github.com/chriseppstein/compass/commit/2973503013a67b958b579f17</a>&shy;f6850499164536a8 and
+                        <a
+                            href="https://github.com/chriseppstein/compass/issues/924" target="_blank">github.com/chriseppstein/compass/issues/924</a> for details.</p>
+                </div>
+                <div class="response">
+                    <p>Thanks for the update. It seems that the -ms- prefix only worked/works in IE10 Preview and is now not
+                        necessary. I assume it's still recognised by IE10 if the unprefixed style is missing?
+                        <img src="/smilies/icon_cool.gif"
+                            width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="0d7fc6b1c6623b4d4d87fd0645e24860" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">DevMan</big>
+                    <span class="comment_time" itemprop="dateCreated">20 April, 2013</span>
+                </p>
+                <div itemprop="text">
+                    <p>Works in IE10...
+                        <img src="/smilies/icon_smile.gif" width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="a06c0de763da7a0be4419dfbb99a878b" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://www.markqian.com/" target="_blank" rel="nofollow">
+                        <big itemprop="author">Mark</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">9 April, 2013</span>
+                </p>
+                <div itemprop="text">
+                    <p>Take a look at this one to see how far you can go with ONLY css</p>
+
+                    <p>
+                        <a href="http://markqian.com/css3" target="_blank">markqian.com/css3</a>
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="8c5c9db19394064fa452b4f1906410ff" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">Christopher Bergin</big>
+                    <span class="comment_time" itemprop="dateCreated">29 March, 2013</span>
+                </p>
+                <div itemprop="text">
+                    <p>great page. I'll bookmark it for reference and use it whenever I would like to provide simple animation
+                        without the need for scripting</p>
+                </div>
+            </div>
+            <div class="comment" hash="d2b5b0f10fbb7c138d1c6b1acecf26c5" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">markosansa</big>
+                    <span class="comment_time" itemprop="dateCreated">18 December, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>Good code but what's about is browser's compatibility ?</p>
+                </div>
+                <div class="response">
+                    <p>The transformations (shift, rotate, scale) are all working in IE9, but not the animations. In IE10 the
+                        animations should also work.
+                        <img src="/smilies/icon_cool.gif" width="15" height="15" border="0"
+                            alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="d3cfc081584ce005518486d17665d3e0" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">Ben Lozano</big>
+                    <span class="comment_time" itemprop="dateCreated">2 August, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>This is an interesting article. I have to take issue with the fact that you called some of the transitions
+                        shown &quot;animations&quot;. CSS3 defines &quot;animations&quot; as well as &quot;transitions,&quot;
+                        and the two are not interchangeable.</p>
+                </div>
+                <div class="response">
+                    <p>Animation: &quot;the rapid display of a sequence of images to create an illusion of movement&quot;.</p>
+
+                    <p>You can create animations using
+                        <i>either</i> CSS Transitions, as shown above,
+                        <i>or</i> with CSS Animation (
+                        <a href="/css/3d-transforms/">using @keyframes</a>). A &quot;transition&quot; is simply a change of state which can now be stretched
+                        out (i.e. animated) using
+                        <a href="/css/timing-function/">transition timing functions</a>.
+                        <img src="/smilies/icon_cool.gif" width="15" height="15" border="0"
+                            alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="ba6c4c5bc0fe8d1396b7e96e628fa879" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">nemo</big>
+                    <span class="comment_time" itemprop="dateCreated">17 July, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>I think it'd be best if you simply specified always using units. Your advice at present suggests using
+                        -moz-transition-delay: 0s, 0s, 0s, 1s only.</p>
+
+                    <p>Since Firefox has unprefixed in nightlies, not using units everywhere means people will do &quot;transition-delay:
+                        0, 0, 0, 1s&quot; and at some point that will break.</p>
+
+                    <p>The exact reading of the spec seems pretty clear that unitless is not an option - so in fact the syntax
+                        you are using is a bug. At some point we'll want to get away from vendor prefixes, so best to fix
+                        this now.</p>
+                </div>
+                <div class="response">
+                    <p>So far it's only Firefox that 'drops' the transition-delay value of '0' for having no units specified.
+                        The reasoning seems to be that in a potential future short-hand property the '0' could be ambiguous
+                        with a numeric value for 'iteration count' or similar.</p>
+
+                    <p>So yes, to be safe you should use '0s' instead of '0' as that will work for all browsers currently supporting
+                        transitions.
+                        <img src="/smilies/icon_cool.gif" width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="87c080bfea4a761eb55fe3f622157a5b" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">josinhoka</big>
+                    <span class="comment_time" itemprop="dateCreated">9 July, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>@Luca add this line on firefox and will work fine -moz-transition-duration: 1s;</p>
+                </div>
+            </div>
+            <div class="comment" hash="66ab37f985d436d0860de62479c10877" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">Hannes Gerlach</big>
+                    <span class="comment_time" itemprop="dateCreated">16 June, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>Hello, I've found your post unbelievable helpful, but there is one question I couldn't figure out after
+                        all. In number 6. you explained how to work with hovering and I used it to give extra information
+                        while hovering over a adjecent &lt;div&gt;.
+                        <br> What I would like would be the option for the information to stay visible for the event that the
+                        div is clicked. And for the information to vanish again after clicking for a second time.
+                        <br> I imagined that it could work as it works with links( :visited etc. ). Sadly thats not the case.
+                        Is there a known possibility or an other mechanic I could try?</p>
+                </div>
+                <div class="response">
+                    <p>You will need to use JavaScript - an &quot;onclick&quot; event that changes the 'class' either of the
+                        element that is clicked or the one that moves, and then changes it back on the next click.
+                        <img src="/smilies/icon_cool.gif"
+                            width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="d9755ee915f75f808e8df7b61d840b4c" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://www.tarikz.co.uk/" target="_blank" rel="nofollow">
+                        <big itemprop="author">Website Design Bangladesh</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">23 May, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>has anyone found a solution to autostart the animation. I've seen a website where clods flow from left
+                        to right and doesn't depend on mouse action. apparently the guy didn't use javascript for this. Wondering
+                        how he did it!</p>
+                </div>
+                <div class="response">
+                    <p>The CSS solution for auto-starting an animation is to use
+                        <a href="/css/3d-transforms/">keyframes</a>
+                        <img src="/smilies/icon_cool.gif" width="15" height="15" border="0" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="89d06a2847b2812f9e2b5c0f3776b5bb" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://www.webdesignerlancaster.co.uk" target="_blank" rel="nofollow">
+                        <big itemprop="author">Lee Marshall</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">19 May, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>I really need to find time to work with these animations/transitions. It's funny when you look back and
+                        can see how many times you could have used these in the past.</p>
+
+                    <p>There's no point in animation just for the heck of it, but for the occasional wow factor.</p>
+
+                    <p>The ability to reveal text with the animations gives them real world application in web design.</p>
+                </div>
+            </div>
+            <div class="comment" hash="10814d58e3ffe8dfa503007c28c8c501" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">André Reitz</big>
+                    <span class="comment_time" itemprop="dateCreated">27 April, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>Great and detailed post!</p>
+
+                    <p>Transactions that animates the background position doesn't work on Opera. Just for information.</p>
+
+                    <p>And it seems to have no alternative solution!</p>
+
+                    <p>If you guys find out how, please let me know!</p>
+
+                    <p>thx</p>
+                </div>
+            </div>
+            <div class="comment" hash="6c8b2844174c77aca0a30e983216ec1c" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://www.katodesignstudio.com/" target="_blank" rel="nofollow">
+                        <big itemprop="author">Azuki</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">23 March, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>This is a great tutorial. Thanks for breaking it down so well!</p>
+
+                    <p>I have a question about #6 above (Hover over one element to affect another). In your example, is there
+                        a way to also trigger an animation for Box#1 while also still animating Box#2?</p>
+
+                    <p>I've tried using the combinators ~ and + without success (both elements are siblings of the same parent
+                        div). I'd really appreciate any ideas you have about accomplishing this in CSS!</p>
+
+                    <p>Thanks!</p>
+                </div>
+                <div class="response">
+                    <p>I've added an example of this now
+                        <img src="/smilies/icon_cool.gif" width="15" height="15" border="0"
+                            alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="0e3b211065fc909c66d26b2844cdf58c" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://www.bcandullo.com/" target="_blank" rel="nofollow">
+                        <big itemprop="author">Brad</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">21 March, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>Great write up. They also work smoothly in FF 11.</p>
+                </div>
+                <div class="response">
+                    <p>Yes, everything works now in Firefox except for the
+                        <tt>transition-delay</tt> setting in the last example.</p>
+                </div>
+            </div>
+            <div class="comment" hash="5600f352c68bc20a8bcba5c8e82dcc53" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <big itemprop="author">bouchaib</big>
+                    <span class="comment_time" itemprop="dateCreated">3 March, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>nice trick, however the css code is invalid !</p>
+                </div>
+            </div>
+            <div class="comment" hash="523af629e2e3b7cca7078bd53ba2ec6e" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://explosivelab.blogspot.com/" target="_blank" rel="nofollow">
+                        <big itemprop="author">evolution</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">11 February, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>Good tutorial, thanks to this i made a css3 digital clock design with css3 animation e transition
+                        <img
+                            src="/smilies/icon_smile.gif" width="15" height="15" border="0" alt="">
+                        <br>
+                        <a href="http://explosivelab.blogspot.com/2012/02/css3-clock-design.html" target="_blank">explosivelab.blogspot.com/2012/02/css3-clock-design.html</a>
+                    </p>
+                </div>
+            </div>
+            <div class="comment" hash="4b4360b4b0e026e8d973859d65893116" itemscope itemtype="http://schema.org/Comment">
+                <p class="comment_author">
+                    <a href="http://www.thoughtresults.com/" target="_blank" rel="nofollow">
+                        <big itemprop="author">Saeed Neamati</big>
+                    </a>
+                    <span class="comment_time" itemprop="dateCreated">1 February, 2012</span>
+                </p>
+                <div itemprop="text">
+                    <p>Man, I just know that I hovered on the rocket image, and it raised to the orbit. I can't believe it that
+                        the next generation of CSS and web technologies can provide us with such a powerful design capabilities.</p>
+
+                    <p>Thank you indeed.</p>
+                </div>
+            </div>
+        </div>
+        <div id="morecomments">
+            <p style="text-align: center;">
+                <button onclick="loadAllCommentsAjax();">show all 37 comments</button>
+            </p>
+        </div>
+
+
+        <script type="text/javascript">var loadAllCommentsAjax = function (value, target) {
+                if (encodeURIComponent) {
+                    var params = { "page": "/css/css-animation/" }; if (typeof AjaxRequestXML == "undefined") {
+                        var script = document.createElement("script"); script.onload = function () { (new AjaxRequestXML()).post("/scripts/loadallcomments.xml", params); }
+                        script.src = "/scripts/AjaxRequestXML.js"; document.head.appendChild(script); return true;
+                    } else { return (new AjaxRequestXML()).post("/scripts/loadallcomments.xml", params); }
+                }
+            }
+            var comments_onload = function () { var arr = document.getElementById("comments").getElementsByTagName("div"); for (var i = 0; i < arr.length; i++) { if ((arr[i].className == "comment") && (hash = arr[i].getAttribute("hash"))) { arr[i].style.backgroundImage = "url(//www.gravatar.com/avatar/" + hash + ".jpg?s=48&d=mm)"; } } }; if (document.addEventListener) { document.addEventListener("DOMContentLoaded", comments_onload, false); } else { window.attachEvent("onload", comments_onload); }</script>
+
+        <div class="clear"></div>
+    </section>
+
+    <aside id="copyright">
+        <a href="/copyright.html">&copy; Copyright 2018</a>
+        <a href="https://www.chirp.com.au/" target="_blank">Chirp Internet</a>
+        - Page Last Modified: 9 April 2016 -
+        <a href="/cookies.html">Privacy &amp; Cookies</a>
+    </aside>
+
+    <a class="totop" href="#content" onclick="document.getElementById('content').scrollIntoView(true); return false;">top</a>
+
+    <script>(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-3458555-1', 'auto'); ga('send', 'pageview');</script>
+    <script src="/combined.js+buildmenu.js+mobilemenu.js.pagespeed.jc.aQguSyjc0-.js"></script>
+    <script>eval(mod_pagespeed_NlyOVtq453);</script>
+    <script>eval(mod_pagespeed_iK83EbpVyV);</script>
+    <script>eval(mod_pagespeed_4N5LI68fBT);</script>
+    <script type="text/javascript">var mySuggest = new Suggestor("sitesearch", "suggest", "/scripts/autosuggest.xml", { regex: /^.{3,12}$/ }); window.onerror = function (msg, url, line) {
+            if (encodeURIComponent) {
+                var AjaxTarget = "scripts/logerror.xml"; var params = { "msg": msg, "url": url, "line": line }; if (typeof AjaxRequestXML == "undefined") {
+                    var script = document.createElement("script"); script.onload = function () { (new AjaxRequestXML()).post(AjaxTarget, params); }
+                    script.src = "/scripts/AjaxRequestXML.js"; document.head.appendChild(script); return true;
+                } else { return (new AjaxRequestXML()).post(AjaxTarget, params); }
+            } return false;
+        }</script>
+
+    <!-- web development by chirp internet -->
+</body>
+
+</html>

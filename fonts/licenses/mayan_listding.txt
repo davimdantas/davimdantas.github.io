@@ -1,0 +1,25 @@
+Listemagerens fonte:
+
+   Dingcats v. 2.0
+   Fabeldyr 1 v. 1.1
+   Fabeldyr 2
+   Fantomet 1 & 2 (under construction)
+   Listemagerens Dingbats v. 2.0
+   Mayan Dingbats.
+
+These fonts - and a few others - can be downloaded from http://home2.inet.tele.dk/bibliste/fontarkiv.htm.
+
+This font is postcardware. If you like it, please send a pretty postcard to my daughter (she's eight years old):
+	Karen Helene Jensen
+	Kildegaardsvej 134
+	DK-5240 Odense NØ
+	Denmark
+	bibliste@post2.tele.dk
+
+Please keep this text-file with the font!
+
+Listemageren, April 20, 1997.
+
+PS: A note to Win3.1-users: due to the limited fonthandling abilities of Win3.1, you may experience difficulties with some of the more complex dingbat-fonts. I.e you'll get a square on the screen instead of a character. This has nothing to do with the font! The only solution, I'm afraid, is an upgrade to Win95.
+
+PPS: many thanks to all the people throughout the world who have send us cards, letters, stickers and other nice things in return for either this font or some of the others!! We regret, that we cannot always find the time to reply directly.

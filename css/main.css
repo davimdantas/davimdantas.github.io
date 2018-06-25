@@ -1,0 +1,221 @@
+/* font-family: 'Spirax', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Anonymous Pro', monospace; */
+
+html {
+    font-size: 1vw;
+}
+
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+
+    border: 0;
+    vertical-align: baseline;
+}
+
+
+.fixed {
+    position: fixed;
+    top: 11vw;
+    left: 10vw;
+}
+
+.fixed h1 {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    font-size: 5rem;
+}
+
+.fixed h1:nth-child(2) {
+    font-size: 4rem;
+}
+
+.left_text {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/* .beach {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 100vw;
+    height: auto;
+} */
+/* 
+.fog {
+    position: absolute;
+    top: 70vh;
+    left: -10vh;
+} */
+
+.scroll {
+    font-size:calc(14px + 1rem );
+    position: absolute;
+    width: 47%;
+    top: 100%;
+    right: 3%;
+}
+
+.left_text {
+    text-align: right;
+}
+
+.scroll h2 {
+    font-size:calc(14px + 1.2rem );
+}
+
+/* .right_foot {
+    position: relative;
+    left: 25%;
+    width: calc(30px + 6vw);
+    height: auto;
+    transition: all 1s .1s;
+    
+} */
+
+.right_foot {
+    position: relative;
+    left: 25%;
+    width: calc(30px + 6vw);
+    height: auto;
+    /* transition: transform 1s linear; */
+    
+}
+
+/* .right_foot:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 2s linear;
+}
+.right_foot:hover {
+    transform: scale(1.5);
+}
+.right_foot:hover:after {
+    transform: translate(.1em,-2.2em);
+} */
+
+
+div.teste {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transition: transform 1s linear;
+}
+div.teste:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    transition: transform 1s 1s linear;
+}
+div.teste:hover {
+    transform: scale(1.5);
+}
+div.teste:hover:after {
+    transform: translate(.1em,2.2em);
+}
+
+.left_foot {
+    position: relative;
+    left: 13%;
+    width: calc(30px + 6vw);
+    height: auto;
+    
+}
+
+/* .right_foot:hover {
+    transform: scale(1.1)
+    translate(.1em,-2.2em);
+} */
+
+/* @keyframes example {
+    from {transform: translateZ(0);}
+    to {transform: translateZ(2);}
+} */
+
+.first_s {
+    top: 20%;
+}
+
+.second_s {
+    top: 28%;
+}
+
+/* -------------- Grid ------------------ */
+
+.grid {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    /* grid: repeat(2, auto) / repeat(4, auto) ;  */
+}
+
+/* p:nth-child(4)::before,
+a:nth-child(2)::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 0.2em solid black;
+    border-top: 0.2em solid black;
+    transform: rotate(-135deg);
+   top: 30%;
+   left: -25%;
+}
+
+a:nth-child(2)::before {
+    top: -5%;
+    left: -25%;
+    transform: rotate(45deg);
+} */
+
+/* ---------------- Media ---------------------- */
+
+@media screen and (max-width:667px) {
+    .scroll {
+        width: 95vw;
+        background: #fff;
+        padding: 5%;
+        position: relative;
+        top: 100vh;
+        
+    }
+
+    .fixed h1 {
+        font-size: 18vw;
+    }
+    section.fixed .left_text {
+        font-size: 11vw;
+    }
+    .grid {
+        grid-template-columns: 35vw 35vw;
+        justify-content: center;	
+        margin: auto;
+    }
+    .beach {
+        position: fixed;
+        width: 100vh;
+        height: auto;
+        top: 40px;
+        left: 0;
+        z-index: -1;
+    }
+    .fog {
+        position: fixed;
+        top: 80px;
+        z-index: -1;
+    }
+}
+

@@ -1,0 +1,145 @@
+/* font-family: 'Spirax', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Anonymous Pro', monospace; */
+
+html {
+    font-size: 1vw;
+}
+
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+.fixed {
+    font-size: 1rem;
+    position: fixed;
+    top: 11vw;
+    left: 10vw;
+}
+
+.fixed h1 {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    font-size: 5rem;
+}
+
+.fixed h1:nth-child(2) {
+    font-size: 4rem;
+}
+
+.left_text {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.beach {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 100vw;
+    height: auto;
+}
+
+.fog {
+    position: absolute;
+    top: 70vh;
+    left: -10vh;
+}
+
+.scroll {
+    position: absolute;
+    width: 47%;
+    top: 100%;
+    right: 3%;
+}
+
+.scroll h2 {
+    font-size: 3rem;
+}
+
+.right_foot {
+    position: relative;
+    left: 25%;
+    width: 7vw;
+    height: auto;
+}
+
+.left_foot {
+    position: relative;
+    left: 13%;
+    width: 7vw;
+    height: auto;
+}
+
+.first_s {
+    top: 20%;
+}
+
+.second_s {
+    top: 20%;
+}
+
+/* -------------- Grid ------------------ */
+
+.grid {
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    /* grid: repeat(2, auto) / repeat(4, auto) ;  */
+}
+
+/* p:nth-child(4)::before,
+a:nth-child(2)::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 0.2em solid black;
+    border-top: 0.2em solid black;
+    transform: rotate(-135deg);
+   top: 30%;
+   left: -25%;
+}
+
+a:nth-child(2)::before {
+    top: -5%;
+    left: -25%;
+    transform: rotate(45deg);
+} */
+
+/* ---------------- Media ---------------------- */
+
+/* @media screen and (max-width:667px) {
+    .scroll {
+        width: 100vw;
+        background: #fff;
+        padding: 10%;
+        position: relative;
+        top: 100vh;
+    }
+
+    .fixed h1 {
+        font-size: 18vw;
+    }
+    section.fixed .left_text {
+        font-size: 11vw;
+    }
+    .grid {
+        grid-template-columns: 35vw 35vw;
+    }
+    .beach {
+        top: 40px;
+        left: 0;
+        z-index: -1;
+    }
+} */
+

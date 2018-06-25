@@ -1,0 +1,321 @@
+body,
+section {
+  overflow-x: hidden;
+}
+
+
+section, article {
+  margin: 0 auto 0 auto;
+  max-width: 700px;
+}
+
+
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* ---------------------------First Section ------------------------------- */
+
+.firstsection, .thirdsection {
+  font-family: typewriter2;
+}
+
+.firstsection,
+.secondsection,
+.thirdsection,
+.fourthsection {
+  padding: 2em 0 1.5em 0;
+}
+
+/* ---------------------------Second Section ------------------------------- */
+
+.secondsection h2, .thirdsection h2, .fifthsection h2, .fifthsection h3 {
+  font-family: nativedancer;
+  font-size: 5rem;
+  font-weight: 100;
+  margin: 0 0 .2em 0;
+}
+
+.content p {
+  text-indent: 1rem;
+}
+
+.secondsection p,
+.fifthsection p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: rgb(37, 36, 34);
+  text-shadow: 0 0 5px rgb(239, 241, 239);
+}
+
+.secondsection span {
+  font-family: mayan;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+article.secondsection p:last-child,
+.firstsection p {
+  margin-bottom: 0;
+}
+
+/* -----------------------------Third Section ------------------------------- */
+.secretfile {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+  grid-gap: .2em;
+}
+
+.wood {
+  background-color: rgb(217, 165, 128);
+  border: 3px outset rgb(129, 101, 81);
+  /* filter: sepia(100%); */
+  box-shadow: inset 0px 0px 200px 20px rgba(0, 0, 0, 0.788);
+}
+
+.wood img {
+  width: 10vw;
+  float: left;
+  margin-right: .5em;
+  box-shadow: -1px -41px 1px -15px rgba(0, 0, 0, 1), 0px 0px 1px .2em rgba(255, 255, 255, 1);
+}
+
+.paper {
+  background-color: rgb(240, 230, 217);
+  margin: 1em;
+  padding: .5em;
+  box-shadow: 8px 5px 28px 2px rgba(0, 0, 0, 0.75);
+  filter: grayscale(80%);
+}
+
+/* ---------------------------- Fourth Section ------------------------------ */
+.ftbg h2,
+.ftbg h3,
+.ftbg p {
+  color: white;
+}
+
+.ftbg img,
+.ftbg h3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center
+}
+
+.ftbg img + h3,
+.ftbg p + h3 {
+  margin-top: 2rem;
+}
+
+.fourthsection h2,
+.fourthsection h3  {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 5rem;
+  font-weight: 100;
+  margin: 0 0 .2em 0;
+}
+
+h3.redtext {
+  background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(124, 11, 11));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fourthsection h3 {
+  /* font-family: 'Dancing Script', cursive; */
+  font-size: 2rem;
+}
+
+.fourthsection p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+}
+
+.qtbg {
+  margin: 2rem 0;
+}
+
+
+/* ---------------------------------Backgrounds----------------------------- */
+
+div.fbg {
+  background-image: url(../images/tree-branch-3.jpg);
+  background-size: auto;
+  background-position: bottom center;
+  background-attachment: fixed;
+  box-shadow: inset 0px -40px 242px -97px rgba(113,14,14,1);
+}
+
+div.sbg {
+  background-image: url(../images/clouds-foggy-hazy-441595.jpg);
+  background-size: cover;
+  background-position: left center;
+  background-attachment: fixed;
+  box-shadow: inset 0px 40px 242px -97px rgba(113,14,14,1),
+  inset 0px -40px 242px -97px rgba(113,14,14,1);
+}
+
+div.tbg {
+  background-image: url(../images/interrogationroom.png);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  box-shadow: inset 0px 40px 242px -97px rgba(113,14,14,1);
+}
+
+div.ftbg {
+  background-image: url(../images/seawaterbw.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  box-shadow: inset 0px 60px 200px -37px rgb(255, 255, 255);
+  /* background-blend-mode: difference; */
+  /* filter: brightness(2) invert(1) grayscale(1); */
+}
+
+iframe {
+  float: left;
+  padding: 0 1em 0.5em 0;
+}
+
+
+
+.firstsection img {
+  float: right;
+  shape-outside: polygon(27.3% 70.94%, 16.97% 62.13%, 26.29% 54.58%, 36.15% 51.58%, 29.98% 43.73%, 32.02% 31.44%, 38.88% 23.33%, 42.37% 16.52%, 54.5% 14.39%, 76.14% 23.3%, 80.45% 99.14%, 26.41% 99.96%, 14.63% 95.19%, 9.65% 87.13%, 13.98% 78.53%, 35.24% 76.64%);
+}
+
+#topbluebar, #rightbluebar, #bottombluebar, #leftbluebar {
+  position: fixed;
+  display: block;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 100px 2px rgba(112,14,14,1);
+}
+
+#topbluebar {
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+}
+
+#rightbluebar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  width: 100%;
+}
+
+#bottombluebar {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  width: 100%;
+}
+
+#leftbluebar {
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+
+}
+
+
+/* .secondsection article {
+  color: aliceblue;
+  font-size: 1.1em;
+  padding: 0 1em 0 1em;
+} */
+
+/* .whitespace-ss {
+  height: 220px;
+  width: 230px;
+  border-radius: 50%;
+  float: right;
+  shape-outside: polygon(
+    18.09% 67.23%,
+    9.24% 55.37%,
+    0.76% 31.3%,
+    -0.37% 11.42%,
+    13.34% -10.15%,
+    45.35% -22.22%,
+    87.75% -18.36%,
+    101.45% 7.76%,
+    95.14% 59.41%,
+    69.43% 89.51%,
+    31.91% 83.28%
+  );
+  margin-left: 20px;
+} */
+
+  /* clip-path: polygon(
+    52.29% 34.2%,
+    59.44% 24.75%,
+    98.94% 24.2%,
+    100.84% 88.59%,
+    57.09% 87.32%,
+    37.74% 84.57%,
+    35.84% 68.41%,
+    40.56% 58.85%,
+    46.4% 49.12%
+  ); */
+
+/* 
+.page-header {
+  height: 100vh;
+  background-image: url(images/paper_1.png);
+} */
+
+/* .page-header:after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(images/paper_1.png);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.3;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+} */
+
+/* .whitespace-fs {
+  height: 350px;
+  width: 340px;
+  float: right;
+  shape-outside: polygon(17.49% 67.81%, 22.07% 60.51%, 32.38% 54.15%, 46.86% 55.04%, 35.46% 47.63%, 36.59% 39.38%, 49.35% 35.99%, 67.34% 37.28%, 79.59% 38.93%, 100.56% 42.79%, 99.23% 99.76%, 6.25% 98.27%, 24.62% 90.36%, 15.54% 82.99%);
+  
+} */
+
+
+@media screen and (max-width: 720px) {
+  section, article {
+    margin: 0 2em 0 2em;
+  }
+  .ftbg h2 {
+    font-size: 3rem;
+  }
+
+  .ftbg h3 {
+    font-size: 1.5rem;
+  }
+}
