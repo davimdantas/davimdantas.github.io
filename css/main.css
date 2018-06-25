@@ -1,7 +1,10 @@
 /* font-family: 'Spirax', cursive;
 font-family: 'Nanum Gothic', sans-serif;
 font-family: 'Quicksand', sans-serif;
-font-family: 'Anonymous Pro', monospace; */
+font-family: 'Anonymous Pro', monospace;
+font-family: 'Cutive Mono', monospace;
+font-family: 'Nova Mono', monospace;
+font-family: 'Vidaloka', serif; */
 
 html {
     font-size: 1vw;
@@ -60,8 +63,10 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     right: 3%;
 }
 
-.left_text {
-    text-align: right;
+.scroll > p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+    font-size:calc(16px + 1rem );
 }
 
 .scroll h2 {
@@ -77,14 +82,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     
 } */
 
-.right_foot {
-    position: relative;
-    left: 25%;
-    width: calc(30px + 6vw);
-    height: auto;
-    /* transition: transform 1s linear; */
-    
-}
+
 
 /* .right_foot:after {
     content: '';
@@ -103,52 +101,61 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 } */
 
 
-div.teste {
-    width: 100px;
-    height: 100px;
+.animation {
     position: relative;
-    transition: transform 1s linear;
+    transition: transform .6s linear;
+    left: 11%;
+    
 }
-div.teste:after {
+.animation:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: red;
-    transition: transform 1s 1s linear;
-}
-div.teste:hover {
-    transform: scale(1.5);
-}
-div.teste:hover:after {
-    transform: translate(.1em,2.2em);
+    background-size: calc(30px + 6vw);
+    background-repeat: no-repeat;
+    transition: transform .5s .6s linear;
+    transform-origin: right bottom;
 }
 
-.left_foot {
+.right_foot:after {
+    background-image: url(../assets/img/screens/rfootmage.png);
+}
+
+.left_foot:after {
+    background-image: url(../assets/img/screens/lfootflag.png);
+}
+
+.animation:hover {
+    transform: scale(1.2);
+}
+.animation:hover:after {
+    transform: translate(0,-1.2em);
+}
+
+.right_foot {
     position: relative;
-    left: 13%;
+    left: 15%;
     width: calc(30px + 6vw);
     height: auto;
     
 }
 
-/* .right_foot:hover {
-    transform: scale(1.1)
-    translate(.1em,-2.2em);
-} */
+.left_foot {
+    position: relative;
+    left: 15%;
+    width: calc(30px + 6vw);
+    height: auto;
+    
+}
 
-/* @keyframes example {
-    from {transform: translateZ(0);}
-    to {transform: translateZ(2);}
-} */
-
-.first_s {
+.first_s:after {
     top: 20%;
 }
 
-.second_s {
+.second_s:after {
     top: 28%;
 }
 
@@ -181,6 +188,13 @@ a:nth-child(2)::before {
     transform: rotate(45deg);
 } */
 
+.grid p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    line-height: 1.1;
+    text-align: justify;
+
+}
 /* ---------------- Media ---------------------- */
 
 @media screen and (max-width:667px) {
