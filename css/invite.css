@@ -1,0 +1,406 @@
+body {
+  width: 95vw;
+  height: 95vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+section {
+  
+  text-align: center;
+}
+
+section h1 {
+  position: relative;
+  top: 5vh;
+  font-size: calc(3vw + 23px);
+  font-family: 'Cabin Sketch', cursive;
+  color: pink;
+  font-weight: 100;
+  text-shadow: 3px 3px 5px #ffffff, 3px -3px 5px #fff, -3px 3px 5px #fff, -3px -3px 5px #fff, 3px 0px 5px #fff, 0px 3px 5px #fff, -3px 0px 5px #fff, 0px -3px 5px #fff;
+
+}
+
+p {
+    width: 75vw;
+    margin: auto;
+    margin-top: 2vh;
+    position: relative;
+    top: 21vh;
+    font-size: calc(2vw + 7px);
+    font-family: 'Josefin Slab', serif;
+    
+    /* text-shadow: 1px 1px rgb(255, 255, 255); */
+    text-shadow: 3px 3px 5px #ffffff, 3px -3px 5px #fff, -3px 3px 5px #fff, -3px -3px 5px #fff, 3px 0px 5px #fff, 0px 3px 5px #fff, -3px 0px 5px #fff, 0px -3px 5px #fff;
+}
+
+h2 {
+    width: 80vw;
+    margin: auto;
+    font-size: calc(2vw + 11px);
+    position: relative;
+    top: 9vh;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    text-shadow: 3px 3px 5px #ffffff, 3px -3px 5px #fff, -3px 3px 5px #fff, -3px -3px 5px #fff, 3px 0px 5px #fff, 0px 3px 5px #fff, -3px 0px 5px #fff, 0px -3px 5px #fff;
+}
+
+.balloons {
+  position: absolute;
+  top: 100vh;
+  z-index: -1;
+}
+
+img {
+  position: absolute;
+  width: 7.25vw;
+  height: auto;
+}
+
+@keyframes yourAnimation1a{
+  0%{
+      transform: rotate(0deg) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) scale(0.95) translateY(-33h);
+      }
+  66.66%{
+      transform: rotate(-3deg) scale(0.9) translateY(-66vh);
+      }
+  100%{
+      transform: rotate(.5deg) scale(0.85) translateY(-100vh);
+      }
+}
+
+@keyframes yourAnimation2a{
+  0%{
+      transform: rotate(-1deg) scale(0.6) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) translateX(-2vw) scale(0.7) translateY(-35vh);
+      }
+  66.66%{
+      transform: rotate(2deg) translateX(-1vw) scale(0.8) translateY(-70vh);
+      }
+  100%{
+      transform: rotate(1deg) translateX(0vw) scale(0.9) translateY(-105vh);
+      }
+}
+
+@keyframes yourAnimation3a{
+  0%{
+      transform: rotate(1deg) scale(0.95) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) translateX(1vw) scale(0.925) translateY(-28vh);
+      }
+  66.66%{
+      transform: rotate(-2deg) translateX(-1vw) scale(0.9) translateY(-56vh);
+      }
+  100%{
+      transform: rotate(-3deg) translateX(1vw) scale(0.875) translateY(-84vh);
+      }
+}
+
+
+@keyframes yourAnimation4a{
+  0%{
+      transform: rotate(1deg) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(2deg) translateX(1.5vw) scale(1.025) translateY(-31vh);
+      }
+  66.66%{
+      transform: rotate(-2deg) translateX(-1.5vw) scale(1.05) translateY(-62vh);
+      }
+  100%{
+      transform: rotate(-1deg) translateX(-1vw) scale(1.075) translateY(-93vh);
+      }
+}
+
+
+@keyframes yourAnimation1b{
+  0%{
+      transform: rotate(0deg) scale(0.9) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) scale(0.93) translateY(-30vh);
+      }
+  66.66%{
+      transform: rotate(2deg) scale(0.96) translateY(-60vh);
+      }
+  100%{
+      transform: rotate(5deg) scale(0.99) translateY(-90vh);
+      }
+}
+
+@keyframes yourAnimation2b{
+  0%{
+      transform: rotate(-1deg) scale(0.7) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) translateX(-0.5vw) scale(0.8) translateY(-37vh);
+      }
+  66.66%{
+      transform: rotate(-4deg) translateX(-0.75vw) scale(0.9) translateY(-74vh);
+      }
+  100%{
+      transform: rotate(1deg) translateX(-1vw) scale(1) translateY(-111vh);
+      }
+}
+
+@keyframes yourAnimation3b{
+  0%{
+      transform: rotate(1deg) scale(0.9) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) translateX(2vw) scale(0.8) translateY(-33vh);
+      }
+  66.66%{
+      transform: rotate(2deg) translateX(-1vw) scale(0.7) translateY(-66vh);
+      }
+  100%{
+      transform: rotate(4deg) translateX(1.5vw) scale(0.6) translateY(-99vh);
+      }
+}
+
+
+@keyframes yourAnimation4b{
+  0%{
+      transform: rotate(1deg) translateX(0vw) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(2deg) translateX(-0.2vw) scale(1) translateY(-35vh);
+      }
+  66.66%{
+      transform: rotate(-2deg) translateX(-.4vw) scale(0.9) translateY(-70vh);
+      }
+  100%{
+      transform: rotate(-3deg) translateX(-0.6vw) scale(0.8) translateY(-105vh);
+      }
+}
+
+@keyframes yourAnimation1c{
+  0%{
+      transform: rotate(0deg) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) scale(1) translateY(-20vh);
+      }
+  66.66%{
+      transform: rotate(-5deg) scale(1) translateY(-40vh);
+      }
+  100%{
+      transform: rotate(-3deg) scale(1) translateY(-60vh);
+      }
+}
+
+@keyframes yourAnimation2c{
+  0%{
+      transform: rotate(-1deg) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) translateX(1vw) scale(1) translateY(-21vh);
+      }
+  66.66%{
+      transform: rotate(-2deg) translateX(-0.5vw) scale(1) translateY(-42vh);
+      }
+  100%{
+      transform: rotate(2deg) translateX(0.3vw) scale(1) translateY(-64vh);
+      }
+}
+
+@keyframes yourAnimation3c{
+  0%{
+      transform: rotate(1deg) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(0deg) translateX(2vw) scale(1) translateY(-29vh);
+      }
+  66.66%{
+      transform: rotate(5deg) translateX(1vw) scale(1) translateY(-58vh);
+      }
+  100%{
+      transform: rotate(2deg) translateX(-0.4vw) scale(1) translateY(-87vh);
+      }
+}
+
+
+@keyframes yourAnimation4c{
+  0%{
+      transform: rotate(1deg) scale(1) translateY(0vh);
+      }
+  33.33%{
+      transform: rotate(2deg) translateX(2.7vw) scale(1) translateY(-27vh);
+      }
+  66.66%{
+      transform: rotate(-2deg) translateX(-0.3vw) scale(1) translateY(-54vh);
+      }
+  100%{
+      transform: rotate(-1deg) translateX(0.1vw) scale(1) translateY(-81vh);
+      }
+}
+
+
+@keyframes yourAnimation1d{
+    0%{
+        transform: rotate(-5deg) scale(0.5) translateY(0vh);
+        }
+    33.33%{
+        transform: rotate(-4deg) scale(.7) translateY(-25vh);
+        }
+    66.66%{
+        transform: rotate(-3deg) scale(.8) translateY(-50vh);
+        }
+    100%{
+        transform: rotate(-2deg) scale(.9) translateY(-75vh);
+        }
+  }
+  
+  @keyframes yourAnimation2d{
+    0%{
+        transform: rotate(4deg) scale(1.1) translateY(0vh);
+        }
+    33.33%{
+        transform: rotate(3deg) translateX(-.5vw) scale(1.075) translateY(-15vh);
+        }
+    66.66%{
+        transform: rotate(2deg) translateX(-0.75vw) scale(1.05) translateY(-30vh);
+        }
+    100%{
+        transform: rotate(1deg) translateX(-1vw) scale(1.025) translateY(-45vh);
+        }
+  }
+  
+  @keyframes yourAnimation3d{
+    0%{
+        transform: rotate(0deg) scale(.9) translateY(0vh);
+        }
+    33.33%{
+        transform: rotate(0deg) translateX(2vw) scale(.85) translateY(-30vh);
+        }
+    66.66%{
+        transform: rotate(0deg) translateX(2.5vw) scale(.8) translateY(-60vh);
+        }
+    100%{
+        transform: rotate(2deg) translateX(3vw) scale(.75) translateY(-90vh);
+        }
+  }
+  
+  
+  @keyframes yourAnimation4d{
+    0%{
+        transform: rotate(1deg) scale(0.8) translateY(0vh);
+        }
+    33.33%{
+        transform: rotate(2deg) translateX(0.2vw) scale(0.85) translateY(-36vh);
+        }
+    66.66%{
+        transform: rotate(3deg) translateX(-0.3vw) scale(0.9) translateY(-72vh);
+        }
+    100%{
+        transform: rotate(2deg) translateX(0.2vw) scale(0.95) translateY(-108vh);
+        }
+  }
+
+.firstline img:nth-child(1)  {left: -2vw; animation: yourAnimation4a 5.1s infinite linear  forwards;}
+.firstline img:nth-child(2)  {left: 82vw; animation: yourAnimation3a 5.2s infinite linear  forwards;}
+.firstline img:nth-child(3)  {left: 78vw; animation: yourAnimation1a 4.6s infinite linear  forwards;}
+.firstline img:nth-child(4)  {left: 74vw; animation: yourAnimation2a 5.2s infinite linear  forwards;}
+.firstline img:nth-child(5)  {left: 68vw; animation: yourAnimation4a 4.8s infinite linear  forwards;}
+.firstline img:nth-child(6)  {left: 20vw; animation: yourAnimation1a 4.6s infinite linear  forwards;}
+.firstline img:nth-child(7)  {left: 24vw; animation: yourAnimation3a 5.3s infinite linear  forwards;}
+.firstline img:nth-child(8)  {left: 28vw; animation: yourAnimation3b 4.6s infinite linear  forwards;}
+.firstline img:nth-child(9)  {left: 32vw; animation: yourAnimation2a 5.2s infinite linear  forwards;}
+.firstline img:nth-child(10) {left: 34vw; animation: yourAnimation1a 4.8s infinite linear  forwards;}
+.firstline img:nth-child(11) {left: 38vw; animation: yourAnimation4a 5.1s infinite linear  forwards;}
+.firstline img:nth-child(12) {left: 42vw; animation: yourAnimation3b 5.2s infinite linear  forwards;}
+.firstline img:nth-child(13) {left: 44vw; animation: yourAnimation1a 4.7s infinite linear  forwards;}
+.firstline img:nth-child(14) {left: 48vw; animation: yourAnimation2a 5.3s infinite linear  forwards;}
+.firstline img:nth-child(15) {left: 52vw; animation: yourAnimation4a 4.6s infinite linear  forwards;}
+.firstline img:nth-child(16) {left: 56vw; animation: yourAnimation4a 5.1s infinite linear  forwards;}
+.firstline img:nth-child(17) {left: 60vw; animation: yourAnimation2a 4.6s infinite linear  forwards;}
+.firstline img:nth-child(18) {left: 64vw; animation: yourAnimation2a 5.3s infinite linear  forwards;}
+.firstline img:nth-child(19) {left: 68vw; animation: yourAnimation1a 4.6s infinite linear  forwards;}
+.firstline img:nth-child(20) {left: 14vw; animation: yourAnimation3b 5.0s infinite linear  forwards;}
+.firstline img:nth-child(21) {left: 9vw; animation: yourAnimation2a 4.8s  infinite linear  forwards;}
+.firstline img:nth-child(22) {left: 5vw; animation: yourAnimation1a 5.1s  infinite linear  forwards;}
+.firstline img:nth-child(23) {left: 2vw; animation: yourAnimation4a 5.3s  infinite linear  forwards;}
+.firstline img:nth-child(24) {left: 88vw; animation: yourAnimation3b 4.7s infinite linear  forwards;}
+
+
+.secondline img:nth-child(1)  {left: -2vw; animation: yourAnimation1b 5.1s 0.57s infinite linear  forwards;}
+.secondline img:nth-child(2)  {left: 82vw;  animation: yourAnimation3b 5.2s 0.55s infinite linear  forwards;}
+.secondline img:nth-child(3)  {left: 77vw;  animation: yourAnimation4b 4.6s 0.58s infinite linear  forwards;}
+.secondline img:nth-child(4)  {left: 74vw; animation: yourAnimation3a 5.2s 0.59s infinite linear  forwards;}
+.secondline img:nth-child(5)  {left: 68vw; animation: yourAnimation4b 4.8s 0.57s infinite linear  forwards;}
+.secondline img:nth-child(6)  {left: 20vw; animation: yourAnimation1b 4.6s 0.56s infinite linear  forwards;}
+.secondline img:nth-child(7)  {left: 24vw; animation: yourAnimation2b 5.3s 0.58s infinite linear  forwards;}
+.secondline img:nth-child(8)  {left: 28vw; animation: yourAnimation1b 4.6s 0.59s infinite linear  forwards;}
+.secondline img:nth-child(9)  {left: 32vw; animation: yourAnimation2b 5.2s 0.57s infinite linear  forwards;}
+.secondline img:nth-child(10) {left: 34vw; animation: yourAnimation3c 4.8s 0.57s infinite linear  forwards;}
+.secondline img:nth-child(11) {left: 38vw; animation: yourAnimation3a 5.1s 0.55s infinite linear  forwards;}
+.secondline img:nth-child(12) {left: 42vw; animation: yourAnimation3c 5.2s 0.56s infinite linear  forwards;}
+.secondline img:nth-child(13) {left: 44vw; animation: yourAnimation1b 4.7s 0.59s infinite linear  forwards;}
+.secondline img:nth-child(14) {left: 48vw; animation: yourAnimation2b 5.3s 0.58s infinite linear  forwards;}
+.secondline img:nth-child(15) {left: 52vw; animation: yourAnimation3a 4.6s 0.58s infinite linear  forwards;}
+.secondline img:nth-child(16) {left: 56vw; animation: yourAnimation2b 5.1s 0.57s infinite linear  forwards;}
+.secondline img:nth-child(17) {left: 60vw; animation: yourAnimation1b 4.6s 0.55s infinite linear  forwards;}
+.secondline img:nth-child(18) {left: 64vw; animation: yourAnimation4b 5.3s 0.56s infinite linear  forwards;}
+.secondline img:nth-child(19) {left: 68vw; animation: yourAnimation1b 4.6s 0.59s infinite linear  forwards;}
+.secondline img:nth-child(20) {left: 14vw; animation: yourAnimation3a 5.0s 0.58s infinite linear  forwards;}
+.secondline img:nth-child(21) {left: 9vw; animation: yourAnimation2b 4.8s 0.57s infinite linear  forwards;}
+.secondline img:nth-child(22) {left: 3vw; animation: yourAnimation1b 5.1s 0.55s infinite linear  forwards;}
+.secondline img:nth-child(23) {left: 2vw; animation: yourAnimation4b 5.3s 0.56s infinite linear  forwards;}
+.secondline img:nth-child(24) {left: 88vw; animation: yourAnimation1b 4.7s 0.57s infinite linear  forwards;}
+
+.thirdline img:nth-child(1)  {left: -2vw;  animation: yourAnimation1c 5.1s 0.73s infinite linear  forwards;}
+.thirdline img:nth-child(2)  {left: 82vw;  animation: yourAnimation2c 5.2s 0.74s infinite linear  forwards;}
+.thirdline img:nth-child(3)  {left: 77vw;  animation: yourAnimation4c 4.6s 0.72s infinite linear  forwards;}
+.thirdline img:nth-child(4)  {left: 74vw; animation: yourAnimation3c 5.2s 0.75s infinite linear  forwards;}
+.thirdline img:nth-child(5)  {left: 68vw; animation: yourAnimation1c 4.8s 0.76s infinite linear  forwards;}
+.thirdline img:nth-child(6)  {left: 20vw; animation: yourAnimation1c 4.6s 0.72s infinite linear  forwards;}
+.thirdline img:nth-child(7)  {left: 24vw; animation: yourAnimation3b 5.3s 0.73s infinite linear  forwards;}
+.thirdline img:nth-child(8)  {left: 28vw; animation: yourAnimation3c 4.6s 0.74s infinite linear  forwards;}
+.thirdline img:nth-child(9)  {left: 32vw; animation: yourAnimation2c 5.2s 0.755s infinite linear  forwards;}
+.thirdline img:nth-child(10) {left: 34vw; animation: yourAnimation4c 4.8s 0.747s infinite linear  forwards;}
+.thirdline img:nth-child(11) {left: 38vw; animation: yourAnimation1c 5.1s 0.73s infinite linear  forwards;}
+.thirdline img:nth-child(12) {left: 42vw; animation: yourAnimation3b 5.2s 0.74s infinite linear  forwards;}
+.thirdline img:nth-child(13) {left: 44vw; animation: yourAnimation1c 4.7s 0.727s infinite linear  forwards;}
+.thirdline img:nth-child(14) {left: 48vw; animation: yourAnimation2c 5.3s 0.73s infinite linear  forwards;}
+.thirdline img:nth-child(15) {left: 52vw; animation: yourAnimation4c 4.6s 0.72s infinite linear  forwards;}
+.thirdline img:nth-child(16) {left: 56vw; animation: yourAnimation4c 5.1s 0.71s infinite linear  forwards;}
+.thirdline img:nth-child(17) {left: 60vw; animation: yourAnimation2c 4.6s 0.72s infinite linear  forwards;}
+.thirdline img:nth-child(18) {left: 64vw; animation: yourAnimation1c 5.3s 0.7s infinite linear  forwards;}
+.thirdline img:nth-child(19) {left: 68vw; animation: yourAnimation1c 4.6s 0.73s infinite linear  forwards;}
+.thirdline img:nth-child(20) {left: 14vw; animation: yourAnimation3c 5.0s 0.76s infinite linear  forwards;}
+.thirdline img:nth-child(21) {left: 9vw; animation: yourAnimation2c 4.8s 0.74s infinite linear  forwards;}
+.thirdline img:nth-child(22) {left: 5vw; animation: yourAnimation1c 5.1s 0.72s infinite linear  forwards;}
+.thirdline img:nth-child(23) {left: 2vw; animation: yourAnimation2c 5.3s 0.71s infinite linear  forwards;}
+.thirdline img:nth-child(24) {left: 88vw; animation: yourAnimation3c 4.7s 0.73s infinite linear  forwards;}
+
+
+.fourthline img:nth-child(1)  {left: -2vw;  animation: yourAnimation1d 5.1s 0.63s infinite linear  forwards;}
+.fourthline img:nth-child(2)  {left: 82vw;  animation: yourAnimation2d 5.2s 0.64s infinite linear  forwards;}
+.fourthline img:nth-child(3)  {left: 77vw;  animation: yourAnimation4d 4.6s 0.62s infinite linear  forwards;}
+.fourthline img:nth-child(4)  {left: 74vw; animation: yourAnimation3d 5.2s 0.65s infinite linear  forwards;}
+.fourthline img:nth-child(5)  {left: 68vw; animation: yourAnimation1d 4.8s 0.66s infinite linear  forwards;}
+.fourthline img:nth-child(6)  {left: 20vw; animation: yourAnimation1d 4.6s 0.62s infinite linear  forwards;}
+.fourthline img:nth-child(7)  {left: 24vw; animation: yourAnimation3d 5.3s 0.63s infinite linear  forwards;}
+.fourthline img:nth-child(8)  {left: 28vw; animation: yourAnimation3d 4.6s 0.64s infinite linear  forwards;}
+.fourthline img:nth-child(9)  {left: 32vw; animation: yourAnimation2d 5.2s 0.655s infinite linear  forwards;}
+.fourthline img:nth-child(10) {left: 34vw; animation: yourAnimation4d 4.8s 0.647s infinite linear  forwards;}
+.fourthline img:nth-child(11) {left: 38vw; animation: yourAnimation1d 5.1s 0.63s infinite linear  forwards;}
+.fourthline img:nth-child(12) {left: 42vw; animation: yourAnimation3d 5.2s 0.64s infinite linear  forwards;}
+.fourthline img:nth-child(13) {left: 44vw; animation: yourAnimation1d 4.7s 0.627s infinite linear  forwards;}
+.fourthline img:nth-child(14) {left: 48vw; animation: yourAnimation2d 5.3s 0.63s infinite linear  forwards;}
+.fourthline img:nth-child(15) {left: 52vw; animation: yourAnimation4d 4.6s 0.62s infinite linear  forwards;}
+.fourthline img:nth-child(16) {left: 56vw; animation: yourAnimation4d 5.1s 0.61s infinite linear  forwards;}
+.fourthline img:nth-child(17) {left: 60vw; animation: yourAnimation2d 4.6s 0.62s infinite linear  forwards;}
+.fourthline img:nth-child(18) {left: 64vw; animation: yourAnimation1d 5.3s 0.6s infinite linear  forwards;}
+.fourthline img:nth-child(19) {left: 68vw; animation: yourAnimation1d 4.6s 0.63s infinite linear  forwards;}
+.fourthline img:nth-child(20) {left: 14vw; animation: yourAnimation3d 5.0s 0.66s infinite linear  forwards;}
+.fourthline img:nth-child(21) {left: 9vw; animation: yourAnimation2d 4.8s 0.64s infinite linear  forwards;}
+.fourthline img:nth-child(22) {left: 5vw; animation: yourAnimation1d 5.1s 0.62s infinite linear  forwards;}
+.fourthline img:nth-child(23) {left: 2vw; animation: yourAnimation2d 5.3s 0.61s infinite linear  forwards;}
+.fourthline img:nth-child(24) {left: 88vw; animation: yourAnimation3d 4.7s 0.63s infinite linear  forwards;}

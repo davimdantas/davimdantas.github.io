@@ -38,21 +38,6 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     overflow: hidden;
 }
 
-/* .beach {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    width: 100vw;
-    height: auto;
-} */
-
-/* 
-.fog {
-    position: absolute;
-    top: 70vh;
-    left: -10vh;
-} */
-
 .scroll {
     font-size: calc(14px + 1rem);
     position: absolute;
@@ -116,11 +101,11 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 
 .right_foot:after {
-    background-image: url(../assets/img/screens/rfootmage.png);
+    background-image: url(../assets/img/portfolio/rfootmage.png);
 }
 
 .left_foot:after {
-    background-image: url(../assets/img/screens/lfootflag.png);
+    background-image: url(../assets/img/portfolio/lfootflag.png);
 }
 
 .animation:hover {
@@ -210,7 +195,7 @@ a:nth-child(2)::before {
         justify-content: center;
         margin: auto;
     }
-    .beach {
+    .twofeet {
         position: fixed;
         width: 100vh;
         height: auto;

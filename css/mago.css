@@ -126,7 +126,6 @@ h3.redtext {
 }
 
 .fourthsection h3 {
-  /* font-family: 'Dancing Script', cursive; */
   font-size: 2rem;
 }
 
@@ -143,7 +142,7 @@ h3.redtext {
 /* ---------------------------------Backgrounds----------------------------- */
 
 div.fbg {
-  background-image: url(../images/tree-branch-3.jpg);
+  background-image: url(../assets/img/mago/tree-branch-3.jpg);
   background-size: auto;
   background-position: bottom center;
   background-attachment: fixed;
@@ -151,7 +150,7 @@ div.fbg {
 }
 
 div.sbg {
-  background-image: url(../images/clouds-foggy-hazy-441595.jpg);
+  background-image: url(../assets/img/mago/clouds-foggy-hazy-441595.jpg);
   background-size: cover;
   background-position: left center;
   background-attachment: fixed;
@@ -160,7 +159,7 @@ div.sbg {
 }
 
 div.tbg {
-  background-image: url(../images/interrogationroom.png);
+  background-image: url(../assets/img/mago/interrogationroom.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -168,7 +167,7 @@ div.tbg {
 }
 
 div.ftbg {
-  background-image: url(../images/seawaterbw.jpg);
+  background-image: url(../assets/img/mago/seawaterbw.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
