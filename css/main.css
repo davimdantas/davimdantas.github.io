@@ -97,12 +97,12 @@ p>a {
 }
 
 .right_foot:after {
-    background-image: url(../assets/img/portfolio/rfootmage.png);
+    background-image: url(../assets/img/portfolio/rfootinvite.png);
     top: 25%;
 }
 
 .right_foot2:after {
-    background-image: url(../assets/img/portfolio/rfootinvite.png);
+    background-image: url(../assets/img/portfolio/rfootmage.png);
 }
 
 .left_foot:after {
