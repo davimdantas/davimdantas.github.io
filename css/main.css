@@ -110,6 +110,11 @@ p>a {
     top: 15%;
 }
 
+.left_foot2:after {
+    background-image: url(../assets/img/portfolio/lfootabsolute.png);
+    top: 15%;
+}
+
 .animation:hover {
     transform: scale(1.2);
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Position absolute.</title>
+    <meta name="author" content="Davi Marins Dantas @davimdantas">
+    <meta name="description" content="Learn how the position:absolute really works and how it behaves with position:relative. I tried to create a visual demonstration of this CSS tool.">
+    <meta itemprop="name" content="Position absolute.">
+    <meta itemprop="description" content="Learn how the position:absolute really works and how it behaves with position:relative. I tried to create a visual demonstration of this CSS tool.">
+    <meta property="og:url" content="http://davimdantas.github.io/positionabsolute.html">
+    <meta property="og:type" content="website">    <meta property="og:title" content="Position absolute.">
+    <meta property="og:description" content="Learn how the position:absolute really works and how it behaves with position:relative. I tried to create a visual demonstration of this CSS tool.">
+        <meta name="twitter:title" content="Position absolute.">
+    <meta name="twitter:description" content="Learn how the position:absolute really works and how it behaves with position:relative. I tried to create a visual demonstration of this CSS tool.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/positionabsolute.css"/>
+</head>
+
+<body>
+    <section class="first_s">
+        <h1>Lets play with positions</h1>
+       <div class="grid">
+            <img src="https://picsum.photos/249" alt="">
+            <h3>I'm in the background so you can focus on how the strawberry img in behaving.</h3>
+            <p>All these grayed elements are here to create spaces and "positions", it would be difficult to note the difference with just one element on the page</p>
+       </div>
+    </section>
+    <section class="second_s">
+        
+        <input id="second_input" class="controled_c" type="checkbox">
+        <input id="first_input" class="controled_c" type="checkbox">
+
+        <div class="playwithpositions">
+            <p>This pink border defines the div you're playing with. This paragraph original position was
+                <b>right above</b> the strawberry photo</p>
+            <img class="appear" src="https://picsum.photos/350?image=1080" alt="">
+            <p>I'm also inside of the div,but my original position was
+                <b>right under</b>
+                the strawberry photo</p>
+        </div>
+
+        <div class="secondrule rule appear">
+            <h4>3</h4>
+            <p>If none of the img parents is positioned (position property to anything other than static) the img would use the offset value ( <code>top:220px</code>) relative to the body.</p>
+
+            <p>
+                <b>Click on me</b> to set <code>position: relative</code> at the div that contains the image.</p>
+            <div class="arrows arrow2">
+                <p>220px</p>
+            </div>
+            <div class="pointers pointer2"></div>
+            <div class="whitebg_code ">
+                <img src="assets/img/positionabsolute/html.png" alt="">
+                <img src="assets/img/positionabsolute/absolute.png" alt="">
+            </div>
+        </div>
+
+        <div class="thirdrule rule appear">
+            <h4>4</h4>
+            <p>The
+                <code>top:220px</code> is still in action, but now it's related to the container and it will not be resolved using
+                the default position but the uppermost position of the container. </p>
+            <div class="arrows arrow3">
+                <p>220px</p>
+            </div>
+            <div class="pointers pointer3"></div>
+            <div class="whitebg_code">
+                <img src="assets/img/positionabsolute/relative.png" alt="">
+
+            </div>
+        </div>
+
+
+        <p>Look how the content that were under the picture goes up and fill the space that belonged to it.</p>
+
+
+    </section>
+    <section class="thirdsection">
+        <img src="https://picsum.photos/301" alt="">
+        <img src="https://picsum.photos/302" alt="">
+    </section>
+
+    <div class="firstrule rule appear">
+        <h4>1</h4>
+        <p>As you can see, this is the starting point of the strawberry image, that's the default position, without any manipulation.
+            It's distance from the top is the sum of all elements that precedes it.</p>
+        <div class="pointers pointer1"></div>
+        <div class="arrows arrow1">
+            <p>561px</p>
+        </div>
+    </div>
+
+
+
+
+
+    <label class="first_label rule appear" for="first_input">
+        <h4>2</h4>
+        <p>Now, click on this box to define <code>position:absolute</code>
+        for this image</p>
+    </label>
+    <label class="second_label" for="second_input"></label>
+
+    <address>
+        <p>Page written by <a href="https://davimdantas.github.io/">davimdantas</a> <img src="assets/img/positionabsolute/GitHub-Mark-32px.png" alt=""></p>
+      </address>
+    <div class="background"></div>
+
+</body>
+
+</html>
