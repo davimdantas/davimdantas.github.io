@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <!-- <meta http-equiv="refresh" content=".01; url=mago.html"> -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Davi Dantas</title>
-
-    <meta name="author" content="Davi Marins Dantas @davimdantas">
-    <meta name="description" content="First projects from web developer @davimdantas. Learning and practicing HTML5, CSS GRID, Flex Box...">
-    <meta itemprop="name" content="davimdantas portfolio">
-    <meta itemprop="description" content="First projects from web developer @davimdantas. Learning and practicing HTML5, CSS GRID, Flex Box...">
-    <meta property="og:url" content="http://davimdantas.github.io/index.html">
-    <meta property="og:type" content="website">   
-    <meta property="og:title" content="Davi Dantas">
-    <meta property="og:description" content="First projects from web developer @davimdantas. Learning and practicing HTML5, CSS GRID, Flex Box...">
-    <meta name="twitter:title" content="davimdantas portfolio">
-    <meta name="twitter:description" content="First projects from web developer @davimdantas. Learning and practicing HTML5, CSS GRID, Flex Box...">
-   
-
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Vidaloka|Anonymous+Pro|Nanum+Gothic|Quicksand|Spirax|Cutive+Mono|Nova+Mono"
-        rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Davi Dantas — Senior Software Engineer</title>
+  <meta name="author" content="Davi Marins Dantas">
+  <meta name="description" content="Davi Dantas, Senior Software Engineer at Wellhub working on marketing engineering and platform.">
+  <meta property="og:url" content="https://davimdantas.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Davi Dantas — Senior Software Engineer">
+  <meta property="og:description" content="Senior Software Engineer at Wellhub working on marketing engineering and platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf9; --fg: #1c1917; --muted: #57534e; --line: #e7e5e4;
+      --card: #ffffff; --accent: #c2410c;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09; --fg: #f5f5f4; --muted: #a8a29e; --line: #292524;
+        --card: #1c1917; --accent: #fb923c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 17px/1.65 Inter, system-ui, sans-serif;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 72px 20px 56px; }
+    h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .role { color: var(--muted); margin: 0 0 32px; font-size: 1.1rem; }
+    h2 {
+      font: 600 0.8rem/1 "JetBrains Mono", monospace; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin: 48px 0 16px;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+      padding: 18px 20px; margin-bottom: 14px;
+    }
+    .card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .tags { margin-top: 10px; font: 0.8rem "JetBrains Mono", monospace; color: var(--muted); }
+    .stack { font-family: "JetBrains Mono", monospace; font-size: 0.9rem; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; gap: 20px; }
+    footer { margin-top: 64px; color: var(--muted); font-size: 0.9rem; }
+  </style>
 </head>
-
 <body>
-    <section class="fixed">
-        <h1 class="left_text">My Life as a</h1>
-        <h1 class="left_text">Web Developer</h1>
-    </section>
+<main>
+  <h1>Davi Dantas</h1>
+  <p class="role">Senior Software Engineer at Wellhub · Marketing engineering &amp; platform · Natal, Brazil (remote)</p>
 
+  <p>I've been at <a href="https://wellhub.com">Wellhub</a> (formerly Gympass) since 2021, working on marketing engineering and platform.</p>
+  <p>I came to software from mechanical engineering: I studied it at UFRN and worked in operations at Petrobras before teaching myself web development in 2018; I started working as a developer in 2019. I care about reliability, clear specs and systems that are easy to operate.</p>
 
-    <img class="twofeet" src="assets/img/portfolio/pexels-photom3.png" alt="">
-    <section class="scroll">
-        <h2>Hello, I'm Davi Dantas and I came to the world of WebDev with 30 years old.</h2>
-        <p>This site is in fact, one of my first baby steps.</p>
-        <div class="grid">
-            <p class="left_text"> As a self-taught I'm always looking for new material and guides, the <a href="https://www.subscribepage.com/30days30sites">30 days, 30 sites</a> challenge helped me a lot keeping me on a path. This was the second day site, a simple and fun invite to a 90th birthday party </p>
-            <a class="right_foot animation" href="invite.html">
-            </a>
+  <h2>What I'm building</h2>
+  <div class="card">
+    <h3>Uora</h3>
+    <p>A social app for meeting up with people you already know when they're nearby. Built around strict privacy rules enforced by tests: only people you already know, no exact locations, no location history.</p>
+    <div class="tags">Go · Flutter · Terraform</div>
+  </div>
+  <div class="card">
+    <h3>Café Coletivo</h3>
+    <p>A web app for organizing group coffee purchases straight from a producer, shipped as a single binary.</p>
+    <div class="tags">Go · PocketBase · SvelteKit</div>
+  </div>
 
-            <a class="left_foot animation" href="flags.html">
-            </a>
-            <p>Then I started a project with @RafaMonteiro, where we would draw a country flag per day, using pure CSS.</p>
+  <h2>Stack</h2>
+  <p class="stack">TypeScript · React / Next.js · Node.js · Go · Svelte · Flutter · AWS · Terraform / OpenTofu</p>
 
-            <p class="left_text">I'm also a RPG (role-playing game) player, so when I was invited to a Mage table, I started to create my history on this website:</p>
-            <a class="right_foot right_foot2 animation " href="mago.html">
-            </a>
+  <h2>Elsewhere</h2>
+  <div class="links">
+    <a href="https://github.com/davimdantas">GitHub</a>
+    <a href="https://www.linkedin.com/in/davidantas/">LinkedIn</a>
+    <a href="early.html">Early work (2018)</a>
+  </div>
 
-            <a class="left_foot left_foot2 animation" href="positionabsolute.html">
-            </a>
-            <p>I've been using position absolute for quite some time, but I couldn't understand how my element would behavior until I'd completed <a href="https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/lock-an-element-to-its-parent-with-absolute-positioning">this lesson on freeCodeCamp</a>.    To practice this and help others visualize that mechanism I made simple guide to CSS absolute position.</p>
-
-        </div>
-        
-
-
-    </section>
-
-
-
-    <img class="fog" src="assets/img/portfolio/lpexels-photom3.png" alt="">
-
-
-
-
+  <footer>© Davi Dantas</footer>
+</main>
 </body>
-
 </html>
